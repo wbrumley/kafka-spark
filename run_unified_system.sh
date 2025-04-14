@@ -157,7 +157,7 @@ start_spark_processor() {
     export PYSPARK_EXECUTOR_OPTS="-Dio.netty.tryReflectionSetAccessible=true"
     
     # Run the processor in the background
-    python direct_kafka_spark.py --from-beginning > logs/spark_processor.log 2>&1 &
+    python src/spark/direct_kafka_spark.py --from-beginning > logs/spark_processor.log 2>&1 &
     PROCESSOR_PID=$!
     echo "Spark processor started with PID: $PROCESSOR_PID"
     
@@ -180,8 +180,8 @@ start_dashboard() {
     
     # Find the dashboard file
     DASHBOARD_FILE=""
-    if [ -f "streamlit_dashboard.py" ]; then
-        DASHBOARD_FILE="streamlit_dashboard.py"
+    if [ -f "src/dashboard/streamlit_dashboard.py" ]; then
+        DASHBOARD_FILE="src/dashboard/streamlit_dashboard.py"
     elif [ -f "src/spark/streamlit_dashboard.py" ]; then
         DASHBOARD_FILE="src/spark/streamlit_dashboard.py"
     elif [ -f "src/spark/dashboard.py" ]; then

@@ -1,0 +1,724 @@
+2025-04-13 17:59:52,508 - __main__ - INFO - Starting security event generator
+2025-04-13 17:59:52,612 - kafka.producer - INFO - Kafka producer initialized with bootstrap servers: localhost:9092
+2025-04-13 17:59:52,613 - __main__ - INFO - Sending events to topic: dev_security_logs
+2025-04-13 17:59:52,613 - __main__ - INFO - Event generation interval: 1.0 seconds
+2025-04-13 17:59:52,615 - __main__ - INFO - LOGIN_SUCCESS: User user_10 (EMPLOYEE) from Masseyhaven, Mauritius | IP: 84.232.32.105 | Session: sess_c1f3e8e1 | Status: 200 | Severity: INFO | Tags: authentication, employee, api
+2025-04-13 17:59:53,620 - __main__ - WARNING - LOGIN_FAILURE: User user_10 (EMPLOYEE) from Masseyhaven, Mauritius | IP: 84.232.32.105 | Session: sess_c1f3e8e1 | Status: 401 | Severity: MEDIUM | Tags: authentication, employee, security-alert, audited, api
+2025-04-13 17:59:54,625 - __main__ - INFO - LOGIN_SUCCESS: User user_17 (CUSTOMER) from New Craigfurt, Lao People's Democratic Republic | IP: 136.216.182.240 | Session: sess_387edf9e | Status: 200 | Severity: INFO | Tags: authentication, customer
+2025-04-13 17:59:55,626 - __main__ - INFO - LOGOUT: User user_81 (EMPLOYEE) from Lake Heatherside, Kuwait | IP: 84.232.32.105 | Session: sess_c1f3e8e1 | Status: 200 | Severity: INFO | Tags: authentication, employee
+2025-04-13 17:59:56,629 - __main__ - ERROR - UNAUTHORIZED_ACCESS: User user_17 (CUSTOMER) from New Craigfurt, Lao People's Democratic Republic | IP: 136.216.182.240 | Session: sess_387edf9e | Status: 403 | Severity: HIGH | Tags: authorization, admin
+2025-04-13 17:59:56,629 - high_severity - ERROR - UNAUTHORIZED_ACCESS: User user_17 (CUSTOMER) from New Craigfurt, Lao People's Democratic Republic | IP: 136.216.182.240 | Session: sess_387edf9e | Status: 403 | Severity: HIGH | Tags: authorization, admin
+2025-04-13 17:59:56,629 - high_severity - ERROR - DETAILS: Unauthorized access attempt to /api/v1/payment-methods | Source: data-service | Target: billing-service | Additional Info: {"resource": "/api/v1/payment-methods", "required_role": "superuser", "user_role": "user"}
+2025-04-13 17:59:57,633 - __main__ - ERROR - DATA_MODIFICATION: User user_17 (CUSTOMER) from New Craigfurt, Lao People's Democratic Republic | IP: 136.216.182.240 | Session: sess_387edf9e | Status: 200 | Severity: HIGH | Tags: data, customer, audited
+2025-04-13 17:59:57,633 - high_severity - ERROR - DATA_MODIFICATION: User user_17 (CUSTOMER) from New Craigfurt, Lao People's Democratic Republic | IP: 136.216.182.240 | Session: sess_387edf9e | Status: 200 | Severity: HIGH | Tags: data, customer, audited
+2025-04-13 17:59:57,633 - high_severity - ERROR - DETAILS: Data modification: configuration records updated | Source: auth-service | Target: reporting-service | Additional Info: {"data_type": "configuration", "records_modified": 33, "modification_type": "create", "approved_change": false}
+2025-04-13 17:59:58,635 - __main__ - WARNING - MFA_CHALLENGE: User user_17 (CUSTOMER) from New Craigfurt, Lao People's Democratic Republic | IP: 136.216.182.240 | Session: sess_387edf9e | Status: 200 | Severity: MEDIUM | Tags: authentication, customer, api
+2025-04-13 17:59:59,640 - __main__ - INFO - LOGIN_SUCCESS: User user_37 (ANONYMOUS) from South Christopher, Rwanda | IP: 195.185.146.1 | Session: sess_dc0fbeb3 | Status: 200 | Severity: INFO | Tags: authentication, anonymous, logged, mobile
+2025-04-13 18:00:00,642 - __main__ - INFO - LOGIN_SUCCESS: User user_16 (CUSTOMER) from New Ronaldville, Philippines | IP: 104.140.98.106 | Session: sess_f6a398cc | Status: 200 | Severity: INFO | Tags: authentication, customer, logged, mobile
+2025-04-13 18:00:01,645 - __main__ - WARNING - LOGIN_FAILURE: User user_37 (ANONYMOUS) from South Christopher, Rwanda | IP: 195.185.146.1 | Session: sess_dc0fbeb3 | Status: 401 | Severity: MEDIUM | Tags: authentication, employee, security-alert, monitored
+2025-04-13 18:00:02,649 - __main__ - CRITICAL - ACCOUNT_LOCKOUT: User user_17 (CUSTOMER) from New Craigfurt, Lao People's Democratic Republic | IP: 136.216.182.240 | Session: sess_387edf9e | Status: 403 | Severity: CRITICAL | Tags: authentication, customer, security-alert, monitored
+2025-04-13 18:00:02,649 - high_severity - CRITICAL - ACCOUNT_LOCKOUT: User user_17 (CUSTOMER) from New Craigfurt, Lao People's Democratic Republic | IP: 136.216.182.240 | Session: sess_387edf9e | Status: 403 | Severity: CRITICAL | Tags: authentication, customer, security-alert, monitored
+2025-04-13 18:00:02,649 - high_severity - CRITICAL - DETAILS: Account locked due to excessive failed login attempts | Source: auth-service | Target: billing-service | Additional Info: {"failed_attempts": 10, "lockout_duration_minutes": 15, "unlock_method": "self_service"}
+2025-04-13 18:00:03,651 - __main__ - INFO - DATA_ACCESS: User user_37 (ANONYMOUS) from South Christopher, Rwanda | IP: 195.185.146.1 | Session: sess_dc0fbeb3 | Status: 200 | Severity: INFO | Tags: data, employee, logged
+2025-04-13 18:00:04,657 - __main__ - ERROR - UNAUTHORIZED_ACCESS: User user_37 (ANONYMOUS) from South Christopher, Rwanda | IP: 195.185.146.1 | Session: sess_dc0fbeb3 | Status: 403 | Severity: HIGH | Tags: authorization, admin, mobile
+2025-04-13 18:00:04,657 - high_severity - ERROR - UNAUTHORIZED_ACCESS: User user_37 (ANONYMOUS) from South Christopher, Rwanda | IP: 195.185.146.1 | Session: sess_dc0fbeb3 | Status: 403 | Severity: HIGH | Tags: authorization, admin, mobile
+2025-04-13 18:00:04,657 - high_severity - ERROR - DETAILS: Unauthorized access attempt to /api/logs | Source: web-portal | Target: web-portal | Additional Info: {"resource": "/api/logs", "required_role": "admin", "user_role": "guest"}
+2025-04-13 18:00:05,661 - __main__ - WARNING - UNAUTHORIZED_ACCESS: User user_17 (CUSTOMER) from New Craigfurt, Lao People's Democratic Republic | IP: 136.216.182.240 | Session: sess_387edf9e | Status: 403 | Severity: MEDIUM | Tags: authorization, employee, monitored
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGIN_SUCCESS | SEVERITY: INFO | 2025-04-13T21:59:52.613552Z
+----------  ------------------------------------
+Event ID    5d67d3ef-0977-4822-b0b2-f095722e0b26
+User        user_10 (EMPLOYEE)
+Message     Successful login attempt
+Location    Masseyhaven, Mauritius
+IP Address  84.232.32.105
+----------  ------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGIN_FAILURE | SEVERITY: MEDIUM | 2025-04-13T21:59:53.619714Z
+----------  ------------------------------------
+Event ID    0749b8f8-8fac-47ab-a713-02fe00000780
+User        user_10 (EMPLOYEE)
+Message     Failed login attempt: account_locked
+Location    Masseyhaven, Mauritius
+IP Address  84.232.32.105
+----------  ------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGIN_SUCCESS | SEVERITY: INFO | 2025-04-13T21:59:54.624370Z
+----------  -----------------------------------------------
+Event ID    04b53d76-4bbe-4bda-abea-8b645c40134a
+User        user_17 (CUSTOMER)
+Message     Successful login attempt
+Location    New Craigfurt, Lao People's Democratic Republic
+IP Address  136.216.182.240
+----------  -----------------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGOUT | SEVERITY: INFO | 2025-04-13T21:59:55.625933Z
+----------  ------------------------------------
+Event ID    a286aa9f-2ef6-493a-bc44-880a6a3fb250
+User        user_81 (EMPLOYEE)
+Message     User logged out successfully
+Location    Lake Heatherside, Kuwait
+IP Address  84.232.32.105
+----------  ------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: UNAUTHORIZED_ACCESS | SEVERITY: HIGH | 2025-04-13T21:59:56.628333Z
+----------  ------------------------------------------------------
+Event ID    7de7498b-e7a4-488f-a229-2ca246e81761
+User        user_17 (CUSTOMER)
+Message     Unauthorized access attempt to /api/v1/payment-methods
+Location    New Craigfurt, Lao People's Democratic Republic
+IP Address  136.216.182.240
+----------  ------------------------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: DATA_MODIFICATION | SEVERITY: HIGH | 2025-04-13T21:59:57.632912Z
+----------  ------------------------------------------------
+Event ID    f5d295d1-8297-4b55-8d5a-af8881438ea4
+User        user_17 (CUSTOMER)
+Message     Data modification: configuration records updated
+Location    New Craigfurt, Lao People's Democratic Republic
+IP Address  136.216.182.240
+----------  ------------------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: MFA_CHALLENGE | SEVERITY: MEDIUM | 2025-04-13T21:59:58.634107Z
+----------  -----------------------------------------------
+Event ID    18a999fd-7585-4968-8d45-f12ed967281b
+User        user_17 (CUSTOMER)
+Message     MFA challenge completed
+Location    New Craigfurt, Lao People's Democratic Republic
+IP Address  136.216.182.240
+----------  -----------------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGIN_SUCCESS | SEVERITY: INFO | 2025-04-13T21:59:59.639495Z
+----------  ------------------------------------
+Event ID    c45773cf-5dae-493c-a4be-5739c16a3b08
+User        user_37 (ANONYMOUS)
+Message     Successful login attempt
+Location    South Christopher, Rwanda
+IP Address  195.185.146.1
+----------  ------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGIN_SUCCESS | SEVERITY: INFO | 2025-04-13T22:00:00.641133Z
+----------  ------------------------------------
+Event ID    5313f2b5-d5b2-4858-af12-8a5588170f40
+User        user_16 (CUSTOMER)
+Message     Successful login attempt
+Location    New Ronaldville, Philippines
+IP Address  104.140.98.106
+----------  ------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGIN_FAILURE | SEVERITY: MEDIUM | 2025-04-13T22:00:01.644248Z
+----------  ------------------------------------
+Event ID    f85cd9ca-4d3c-4378-9671-0e764e110885
+User        user_37 (ANONYMOUS)
+Message     Failed login attempt: invalid_2fa
+Location    South Christopher, Rwanda
+IP Address  195.185.146.1
+----------  ------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: ACCOUNT_LOCKOUT | SEVERITY: CRITICAL | 2025-04-13T22:00:02.647864Z
+----------  -----------------------------------------------------
+Event ID    d1a7f998-3eb0-42e3-91eb-de0e9c8da5ee
+User        user_17 (CUSTOMER)
+Message     Account locked due to excessive failed login attempts
+Location    New Craigfurt, Lao People's Democratic Republic
+IP Address  136.216.182.240
+----------  -----------------------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: DATA_ACCESS | SEVERITY: INFO | 2025-04-13T22:00:03.650658Z
+----------  ------------------------------------
+Event ID    594d5f28-6b9d-42be-9309-062e2468e689
+User        user_37 (ANONYMOUS)
+Message     Data access: customer records
+Location    South Christopher, Rwanda
+IP Address  195.185.146.1
+----------  ------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: UNAUTHORIZED_ACCESS | SEVERITY: HIGH | 2025-04-13T22:00:04.656526Z
+----------  ----------------------------------------
+Event ID    9cc1942c-a458-4712-bc3b-e0d2bb745154
+User        user_37 (ANONYMOUS)
+Message     Unauthorized access attempt to /api/logs
+Location    South Christopher, Rwanda
+IP Address  195.185.146.1
+----------  ----------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: UNAUTHORIZED_ACCESS | SEVERITY: MEDIUM | 2025-04-13T22:00:05.660716Z
+----------  -----------------------------------------------
+Event ID    a8937b48-a935-4abf-a92c-b1bac8033bc0
+User        user_17 (CUSTOMER)
+Message     Unauthorized access attempt to /api/users
+Location    New Craigfurt, Lao People's Democratic Republic
+IP Address  136.216.182.240
+----------  -----------------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: ACCOUNT_LOCKOUT | SEVERITY: HIGH | 2025-04-13T22:00:06.661710Z
+2025-04-13 18:00:06,662 - __main__ - ERROR - ACCOUNT_LOCKOUT: User user_17 (CUSTOMER) from New Craigfurt, Lao People's Democratic Republic | IP: 136.216.182.240 | Session: sess_387edf9e | Status: 403 | Severity: HIGH | Tags: authentication, customer, security-alert
+2025-04-13 18:00:06,663 - high_severity - ERROR - ACCOUNT_LOCKOUT: User user_17 (CUSTOMER) from New Craigfurt, Lao People's Democratic Republic | IP: 136.216.182.240 | Session: sess_387edf9e | Status: 403 | Severity: HIGH | Tags: authentication, customer, security-alert
+2025-04-13 18:00:06,663 - high_severity - ERROR - DETAILS: Account locked due to excessive failed login attempts | Source: reporting-service | Target: auth-service | Additional Info: {"failed_attempts": 9, "lockout_duration_minutes": 30, "unlock_method": "time_based"}
+2025-04-13 18:00:07,664 - __main__ - ERROR - LOGIN_FAILURE: User user_37 (ANONYMOUS) from South Christopher, Rwanda | IP: 195.185.146.1 | Session: sess_dc0fbeb3 | Status: 401 | Severity: HIGH | Tags: authentication, employee, security-alert
+2025-04-13 18:00:07,665 - high_severity - ERROR - LOGIN_FAILURE: User user_37 (ANONYMOUS) from South Christopher, Rwanda | IP: 195.185.146.1 | Session: sess_dc0fbeb3 | Status: 401 | Severity: HIGH | Tags: authentication, employee, security-alert
+2025-04-13 18:00:07,665 - high_severity - ERROR - DETAILS: Failed login attempt: invalid_2fa | Source: admin-panel | Target: mobile-app | Additional Info: {"failure_reason": "invalid_2fa", "attempt_number": 5, "device_type": "mobile"}
+2025-04-13 18:00:08,668 - __main__ - INFO - LOGIN_SUCCESS: User user_32 (CUSTOMER) from Haysberg, Guyana | IP: 207.22.172.201 | Session: sess_277b4af2 | Status: 200 | Severity: INFO | Tags: authentication, customer, mobile
+2025-04-13 18:00:09,670 - __main__ - ERROR - LOGIN_FAILURE: User user_16 (CUSTOMER) from New Ronaldville, Philippines | IP: 104.140.98.106 | Session: sess_f6a398cc | Status: 401 | Severity: HIGH | Tags: authentication, customer, security-alert, audited
+2025-04-13 18:00:09,670 - high_severity - ERROR - LOGIN_FAILURE: User user_16 (CUSTOMER) from New Ronaldville, Philippines | IP: 104.140.98.106 | Session: sess_f6a398cc | Status: 401 | Severity: HIGH | Tags: authentication, customer, security-alert, audited
+2025-04-13 18:00:09,671 - high_severity - ERROR - DETAILS: Failed login attempt: invalid_username | Source: mobile-app | Target: reporting-service | Additional Info: {"failure_reason": "invalid_username", "attempt_number": 5, "device_type": "desktop"}
+2025-04-13 18:00:10,676 - __main__ - INFO - DATA_ACCESS: User user_32 (CUSTOMER) from Haysberg, Guyana | IP: 207.22.172.201 | Session: sess_277b4af2 | Status: 200 | Severity: INFO | Tags: data, contractor, logged
+2025-04-13 18:00:11,681 - __main__ - CRITICAL - PRIVILEGE_ESCALATION: User user_16 (CUSTOMER) from New Ronaldville, Philippines | IP: 104.140.98.106 | Session: sess_f6a398cc | Status: 400 | Severity: CRITICAL | Tags: authorization, customer, security-threat, web
+2025-04-13 18:00:11,681 - high_severity - CRITICAL - PRIVILEGE_ESCALATION: User user_16 (CUSTOMER) from New Ronaldville, Philippines | IP: 104.140.98.106 | Session: sess_f6a398cc | Status: 400 | Severity: CRITICAL | Tags: authorization, customer, security-threat, web
+2025-04-13 18:00:11,681 - high_severity - CRITICAL - DETAILS: Attempted privilege escalation detected | Source: data-service | Target: data-service | Additional Info: {"target_role": "admin", "method": "injection", "detection_source": "waf"}
+2025-04-13 18:00:12,684 - __main__ - INFO - DATA_ACCESS: User user_17 (CUSTOMER) from New Craigfurt, Lao People's Democratic Republic | IP: 136.216.182.240 | Session: sess_387edf9e | Status: 200 | Severity: INFO | Tags: data, employee, desktop
+2025-04-13 18:00:13,687 - __main__ - INFO - LOGIN_SUCCESS: User user_57 (EMPLOYEE) from New Patriciaborough, Haiti | IP: 172.20.196.85 | Session: sess_ad81e8a1 | Status: 200 | Severity: INFO | Tags: authentication, employee
+2025-04-13 18:00:14,690 - __main__ - INFO - LOGIN_SUCCESS: User user_79 (EMPLOYEE) from Port James, Iceland | IP: 192.168.77.17 | Session: sess_0129be55 | Status: 200 | Severity: INFO | Tags: authentication, employee, api
+2025-04-13 18:00:15,692 - __main__ - INFO - LOGIN_SUCCESS: User user_56 (EMPLOYEE) from West Heatherstad, Barbados | IP: 200.112.177.232 | Session: sess_c661564f | Status: 200 | Severity: INFO | Tags: authentication, employee, audited, api
+2025-04-13 18:00:16,693 - __main__ - WARNING - LOGIN_FAILURE: User user_37 (ANONYMOUS) from South Christopher, Rwanda | IP: 195.185.146.1 | Session: sess_dc0fbeb3 | Status: 401 | Severity: MEDIUM | Tags: authentication, employee, security-alert, mobile
+2025-04-13 18:00:17,696 - __main__ - WARNING - LOGIN_FAILURE: User user_16 (CUSTOMER) from New Ronaldville, Philippines | IP: 104.140.98.106 | Session: sess_f6a398cc | Status: 401 | Severity: MEDIUM | Tags: authentication, employee, security-alert, api
+2025-04-13 18:00:18,703 - __main__ - INFO - LOGIN_SUCCESS: User user_92 (EMPLOYEE) from Davidshire, Hungary | IP: 41.240.249.225 | Session: sess_2cdc1f96 | Status: 200 | Severity: INFO | Tags: authentication, employee, monitored
+2025-04-13 18:00:19,709 - __main__ - WARNING - PERMISSION_CHANGE: User user_56 (EMPLOYEE) from West Heatherstad, Barbados | IP: 200.112.177.232 | Session: sess_c661564f | Status: 200 | Severity: MEDIUM | Tags: authorization, employee
+2025-04-13 18:00:20,710 - __main__ - WARNING - LOGIN_FAILURE: User user_79 (EMPLOYEE) from Port James, Iceland | IP: 192.168.77.17 | Session: sess_0129be55 | Status: 401 | Severity: MEDIUM | Tags: authentication, anonymous, security-alert
+----------  -----------------------------------------------------
+Event ID    a1d562b1-6c08-4bb7-b294-450a6dc10f92
+User        user_17 (CUSTOMER)
+Message     Account locked due to excessive failed login attempts
+Location    New Craigfurt, Lao People's Democratic Republic
+IP Address  136.216.182.240
+----------  -----------------------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGIN_FAILURE | SEVERITY: HIGH | 2025-04-13T22:00:07.664232Z
+----------  ------------------------------------
+Event ID    fad0eb0e-e182-4913-8f7c-8ffbe29dc863
+User        user_37 (ANONYMOUS)
+Message     Failed login attempt: invalid_2fa
+Location    South Christopher, Rwanda
+IP Address  195.185.146.1
+----------  ------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGIN_SUCCESS | SEVERITY: INFO | 2025-04-13T22:00:08.667689Z
+----------  ------------------------------------
+Event ID    547d575c-faa1-4aa3-987c-40c9712f6b2d
+User        user_32 (CUSTOMER)
+Message     Successful login attempt
+Location    Haysberg, Guyana
+IP Address  207.22.172.201
+----------  ------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGIN_FAILURE | SEVERITY: HIGH | 2025-04-13T22:00:09.670325Z
+----------  --------------------------------------
+Event ID    899155a2-e0f6-4d02-b151-4a18d28c13a3
+User        user_16 (CUSTOMER)
+Message     Failed login attempt: invalid_username
+Location    New Ronaldville, Philippines
+IP Address  104.140.98.106
+----------  --------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: DATA_ACCESS | SEVERITY: INFO | 2025-04-13T22:00:10.675756Z
+----------  ------------------------------------
+Event ID    7803a4b0-a5ac-4e8f-b7a9-118dcb4e628a
+User        user_32 (CUSTOMER)
+Message     Data access: employee records
+Location    Haysberg, Guyana
+IP Address  207.22.172.201
+----------  ------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: PRIVILEGE_ESCALATION | SEVERITY: CRITICAL | 2025-04-13T22:00:11.680523Z
+----------  ---------------------------------------
+Event ID    2904b7a3-d5e4-4d96-b505-9e5d7de3a96a
+User        user_16 (CUSTOMER)
+Message     Attempted privilege escalation detected
+Location    New Ronaldville, Philippines
+IP Address  104.140.98.106
+----------  ---------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: DATA_ACCESS | SEVERITY: INFO | 2025-04-13T22:00:12.683576Z
+----------  -----------------------------------------------
+Event ID    e456b51a-77f0-4d6d-a153-170dc1a296e6
+User        user_17 (CUSTOMER)
+Message     Data access: employee records
+Location    New Craigfurt, Lao People's Democratic Republic
+IP Address  136.216.182.240
+----------  -----------------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGIN_SUCCESS | SEVERITY: INFO | 2025-04-13T22:00:13.685813Z
+----------  ------------------------------------
+Event ID    f9972c93-9c7c-4166-9e87-331e27ac5be0
+User        user_57 (EMPLOYEE)
+Message     Successful login attempt
+Location    New Patriciaborough, Haiti
+IP Address  172.20.196.85
+----------  ------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGIN_SUCCESS | SEVERITY: INFO | 2025-04-13T22:00:14.689943Z
+----------  ------------------------------------
+Event ID    043340eb-b1e9-48ea-a95c-62ae62ef4d3a
+User        user_79 (EMPLOYEE)
+Message     Successful login attempt
+Location    Port James, Iceland
+IP Address  192.168.77.17
+----------  ------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGIN_SUCCESS | SEVERITY: INFO | 2025-04-13T22:00:15.691519Z
+----------  ------------------------------------
+Event ID    de23d500-ee88-4afb-a629-f12c494705b9
+User        user_56 (EMPLOYEE)
+Message     Successful login attempt
+Location    West Heatherstad, Barbados
+IP Address  200.112.177.232
+----------  ------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGIN_FAILURE | SEVERITY: MEDIUM | 2025-04-13T22:00:16.693426Z
+----------  --------------------------------------
+Event ID    31c20dfb-12ef-415c-a417-3a8e18789ba3
+User        user_37 (ANONYMOUS)
+Message     Failed login attempt: expired_password
+Location    South Christopher, Rwanda
+IP Address  195.185.146.1
+----------  --------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGIN_FAILURE | SEVERITY: MEDIUM | 2025-04-13T22:00:17.696093Z
+----------  ------------------------------------
+Event ID    ace083ee-cb82-41d1-b160-443757a6e5af
+User        user_16 (CUSTOMER)
+Message     Failed login attempt: invalid_2fa
+Location    New Ronaldville, Philippines
+IP Address  104.140.98.106
+----------  ------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGIN_SUCCESS | SEVERITY: INFO | 2025-04-13T22:00:18.699815Z
+----------  ------------------------------------
+Event ID    22f7ddde-8bb5-46f1-8994-640b0e2d42d3
+User        user_92 (EMPLOYEE)
+Message     Successful login attempt
+Location    Davidshire, Hungary
+IP Address  41.240.249.225
+----------  ------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: PERMISSION_CHANGE | SEVERITY: MEDIUM | 2025-04-13T22:00:19.708947Z
+----------  ------------------------------------
+Event ID    daaf76f9-418e-47fd-ae7e-cdd118f02eab
+User        user_56 (EMPLOYEE)
+Message     User permissions modified
+Location    West Heatherstad, Barbados
+IP Address  200.112.177.232
+----------  ------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGIN_FAILURE | SEVERITY: MEDIUM | 2025-04-13T22:00:20.710251Z
+----------  --------------------------------------
+Event ID    f3725360-2890-4cf3-b033-88ab10f925b9
+User        user_79 (EMPLOYEE)
+Message     Failed login attempt: expired_password
+Location    Port James, Iceland
+IP Address  192.168.77.17
+----------  --------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: ACCOUNT_LOCKOUT | SEVERITY: HIGH | 2025-04-13T22:00:21.713986Z
+2025-04-13 18:00:21,714 - __main__ - ERROR - ACCOUNT_LOCKOUT: User user_37 (ANONYMOUS) from South Christopher, Rwanda | IP: 195.185.146.1 | Session: sess_dc0fbeb3 | Status: 403 | Severity: HIGH | Tags: authentication, employee, security-alert, desktop
+2025-04-13 18:00:21,715 - high_severity - ERROR - ACCOUNT_LOCKOUT: User user_37 (ANONYMOUS) from South Christopher, Rwanda | IP: 195.185.146.1 | Session: sess_dc0fbeb3 | Status: 403 | Severity: HIGH | Tags: authentication, employee, security-alert, desktop
+2025-04-13 18:00:21,715 - high_severity - ERROR - DETAILS: Account locked due to excessive failed login attempts | Source: data-service | Target: admin-panel | Additional Info: {"failed_attempts": 9, "lockout_duration_minutes": 1440, "unlock_method": "self_service"}
+2025-04-13 18:00:22,721 - __main__ - INFO - LOGOUT: User user_4 (EMPLOYEE) from New Thomas, United States Minor Outlying Islands | IP: 192.168.77.17 | Session: sess_0129be55 | Status: 200 | Severity: INFO | Tags: authentication, employee
+2025-04-13 18:00:23,726 - __main__ - INFO - LOGOUT: User user_89 (CUSTOMER) from Port Monica, Cyprus | IP: 41.240.249.225 | Session: sess_2cdc1f96 | Status: 200 | Severity: INFO | Tags: authentication, customer, web
+2025-04-13 18:00:24,732 - __main__ - INFO - LOGIN_SUCCESS: User user_60 (CUSTOMER) from Jackland, Vietnam | IP: 220.13.4.58 | Session: sess_7913c0b3 | Status: 200 | Severity: INFO | Tags: authentication, customer, desktop
+2025-04-13 18:00:25,737 - __main__ - ERROR - ACCOUNT_LOCKOUT: User user_60 (CUSTOMER) from Jackland, Vietnam | IP: 220.13.4.58 | Session: sess_7913c0b3 | Status: 403 | Severity: HIGH | Tags: authentication, employee, security-alert
+2025-04-13 18:00:25,737 - high_severity - ERROR - ACCOUNT_LOCKOUT: User user_60 (CUSTOMER) from Jackland, Vietnam | IP: 220.13.4.58 | Session: sess_7913c0b3 | Status: 403 | Severity: HIGH | Tags: authentication, employee, security-alert
+2025-04-13 18:00:25,737 - high_severity - ERROR - DETAILS: Account locked due to excessive failed login attempts | Source: user-service | Target: reporting-service | Additional Info: {"failed_attempts": 8, "lockout_duration_minutes": 30, "unlock_method": "time_based"}
+2025-04-13 18:00:26,740 - __main__ - WARNING - UNAUTHORIZED_ACCESS: User user_17 (CUSTOMER) from New Craigfurt, Lao People's Democratic Republic | IP: 136.216.182.240 | Session: sess_387edf9e | Status: 403 | Severity: MEDIUM | Tags: authorization, employee, desktop
+2025-04-13 18:00:27,744 - __main__ - INFO - LOGIN_SUCCESS: User user_30 (EMPLOYEE) from South Brenda, Christmas Island | IP: 10.250.110.153 | Session: sess_da9518f9 | Status: 200 | Severity: INFO | Tags: authentication, employee, mobile
+2025-04-13 18:00:28,748 - __main__ - ERROR - LOGIN_FAILURE: User user_32 (CUSTOMER) from Haysberg, Guyana | IP: 207.22.172.201 | Session: sess_277b4af2 | Status: 401 | Severity: HIGH | Tags: authentication, employee, security-alert, desktop
+2025-04-13 18:00:28,749 - high_severity - ERROR - LOGIN_FAILURE: User user_32 (CUSTOMER) from Haysberg, Guyana | IP: 207.22.172.201 | Session: sess_277b4af2 | Status: 401 | Severity: HIGH | Tags: authentication, employee, security-alert, desktop
+2025-04-13 18:00:28,749 - high_severity - ERROR - DETAILS: Failed login attempt: invalid_username | Source: api-gateway | Target: reporting-service | Additional Info: {"failure_reason": "invalid_username", "attempt_number": 3, "device_type": "mobile"}
+2025-04-13 18:00:29,753 - __main__ - INFO - LOGIN_SUCCESS: User user_83 (ADMIN) from New Randy, Pitcairn Islands | IP: 10.14.91.172 | Session: sess_eca55519 | Status: 200 | Severity: INFO | Tags: authentication, admin
+2025-04-13 18:00:30,759 - __main__ - INFO - LOGIN_SUCCESS: User user_82 (CUSTOMER) from West Joseph, Lebanon | IP: 98.81.135.190 | Session: sess_070f7d58 | Status: 200 | Severity: INFO | Tags: authentication, customer
+2025-04-13 18:00:31,765 - __main__ - WARNING - PASSWORD_CHANGE: User user_17 (CUSTOMER) from New Craigfurt, Lao People's Democratic Republic | IP: 136.216.182.240 | Session: sess_387edf9e | Status: 200 | Severity: MEDIUM | Tags: authentication, customer
+2025-04-13 18:00:32,770 - __main__ - INFO - LOGOUT: User user_39 (CUSTOMER) from Wardberg, Kuwait | IP: 10.250.110.153 | Session: sess_da9518f9 | Status: 200 | Severity: INFO | Tags: authentication, customer, api
+2025-04-13 18:00:33,771 - __main__ - WARNING - LOGIN_FAILURE: User user_82 (CUSTOMER) from West Joseph, Lebanon | IP: 98.81.135.190 | Session: sess_070f7d58 | Status: 401 | Severity: MEDIUM | Tags: authentication, customer, security-alert
+2025-04-13 18:00:34,774 - __main__ - INFO - LOGIN_SUCCESS: User user_82 (CUSTOMER) from West Joseph, Lebanon | IP: 60.185.140.91 | Session: sess_fab92bdb | Status: 200 | Severity: INFO | Tags: authentication, customer, logged
+2025-04-13 18:00:35,777 - __main__ - WARNING - LOGIN_FAILURE: User user_56 (EMPLOYEE) from West Heatherstad, Barbados | IP: 200.112.177.232 | Session: sess_c661564f | Status: 401 | Severity: MEDIUM | Tags: authentication, contractor, security-alert, api
+----------  -----------------------------------------------------
+Event ID    46a15809-b7b4-4f52-83ff-27dbdf042445
+User        user_37 (ANONYMOUS)
+Message     Account locked due to excessive failed login attempts
+Location    South Christopher, Rwanda
+IP Address  195.185.146.1
+----------  -----------------------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGOUT | SEVERITY: INFO | 2025-04-13T22:00:22.719511Z
+----------  ------------------------------------------------
+Event ID    e39bd3e9-f604-48a3-8c43-1abc1499cb77
+User        user_4 (EMPLOYEE)
+Message     User logged out successfully
+Location    New Thomas, United States Minor Outlying Islands
+IP Address  192.168.77.17
+----------  ------------------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGOUT | SEVERITY: INFO | 2025-04-13T22:00:23.724969Z
+----------  ------------------------------------
+Event ID    7f8c97f2-e174-4780-9933-564225d55068
+User        user_89 (CUSTOMER)
+Message     User logged out successfully
+Location    Port Monica, Cyprus
+IP Address  41.240.249.225
+----------  ------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGIN_SUCCESS | SEVERITY: INFO | 2025-04-13T22:00:24.731296Z
+----------  ------------------------------------
+Event ID    9770ee7a-a14b-488b-b2ac-ddfd519f133c
+User        user_60 (CUSTOMER)
+Message     Successful login attempt
+Location    Jackland, Vietnam
+IP Address  220.13.4.58
+----------  ------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: ACCOUNT_LOCKOUT | SEVERITY: HIGH | 2025-04-13T22:00:25.736553Z
+----------  -----------------------------------------------------
+Event ID    bbd130ed-67e6-49e2-a37c-78be7c9e1813
+User        user_60 (CUSTOMER)
+Message     Account locked due to excessive failed login attempts
+Location    Jackland, Vietnam
+IP Address  220.13.4.58
+----------  -----------------------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: UNAUTHORIZED_ACCESS | SEVERITY: MEDIUM | 2025-04-13T22:00:26.740100Z
+----------  -----------------------------------------------
+Event ID    273203e3-7684-4c4c-b082-81d153ebdc22
+User        user_17 (CUSTOMER)
+Message     Unauthorized access attempt to /internal/config
+Location    New Craigfurt, Lao People's Democratic Republic
+IP Address  136.216.182.240
+----------  -----------------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGIN_SUCCESS | SEVERITY: INFO | 2025-04-13T22:00:27.744116Z
+----------  ------------------------------------
+Event ID    b5c6e7ab-535f-4ac0-b456-d9373c0b7672
+User        user_30 (EMPLOYEE)
+Message     Successful login attempt
+Location    South Brenda, Christmas Island
+IP Address  10.250.110.153
+----------  ------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGIN_FAILURE | SEVERITY: HIGH | 2025-04-13T22:00:28.747747Z
+----------  --------------------------------------
+Event ID    66bf0bfe-74ba-4360-a883-bbbf6d54869c
+User        user_32 (CUSTOMER)
+Message     Failed login attempt: invalid_username
+Location    Haysberg, Guyana
+IP Address  207.22.172.201
+----------  --------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGIN_SUCCESS | SEVERITY: INFO | 2025-04-13T22:00:29.751830Z
+----------  ------------------------------------
+Event ID    a8f4c858-2081-4502-9a4f-f3f1533571ec
+User        user_83 (ADMIN)
+Message     Successful login attempt
+Location    New Randy, Pitcairn Islands
+IP Address  10.14.91.172
+----------  ------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGIN_SUCCESS | SEVERITY: INFO | 2025-04-13T22:00:30.758393Z
+----------  ------------------------------------
+Event ID    3753396b-a3db-4f3d-96f9-94e53fd3937c
+User        user_82 (CUSTOMER)
+Message     Successful login attempt
+Location    West Joseph, Lebanon
+IP Address  98.81.135.190
+----------  ------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: PASSWORD_CHANGE | SEVERITY: MEDIUM | 2025-04-13T22:00:31.764871Z
+----------  -----------------------------------------------
+Event ID    1d13c1b8-83d5-4c14-9fc3-1e18299dd539
+User        user_17 (CUSTOMER)
+Message     Password successfully changed
+Location    New Craigfurt, Lao People's Democratic Republic
+IP Address  136.216.182.240
+----------  -----------------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGOUT | SEVERITY: INFO | 2025-04-13T22:00:32.769629Z
+----------  ------------------------------------
+Event ID    7b447d96-e462-4323-acb2-5e2c0a1952f0
+User        user_39 (CUSTOMER)
+Message     User logged out successfully
+Location    Wardberg, Kuwait
+IP Address  10.250.110.153
+----------  ------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGIN_FAILURE | SEVERITY: MEDIUM | 2025-04-13T22:00:33.771237Z
+----------  ------------------------------------
+Event ID    26315f17-c593-46c0-8a6d-1bb4e619dddc
+User        user_82 (CUSTOMER)
+Message     Failed login attempt: invalid_2fa
+Location    West Joseph, Lebanon
+IP Address  98.81.135.190
+----------  ------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGIN_SUCCESS | SEVERITY: INFO | 2025-04-13T22:00:34.774238Z
+----------  ------------------------------------
+Event ID    e426e450-c199-48e5-94bf-c22279809b08
+User        user_82 (CUSTOMER)
+Message     Successful login attempt
+Location    West Joseph, Lebanon
+IP Address  60.185.140.91
+----------  ------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGIN_FAILURE | SEVERITY: MEDIUM | 2025-04-13T22:00:35.776758Z
+----------  ------------------------------------
+Event ID    f5af5918-51e3-4063-bda1-8c297e2a0aea
+User        user_56 (EMPLOYEE)
+Message     Failed login attempt: invalid_2fa
+Location    West Heatherstad, Barbados
+IP Address  200.112.177.232
+----------  ------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGIN_FAILURE | SEVERITY: MEDIUM | 2025-04-13T22:00:36.779472Z
+2025-04-13 18:00:36,780 - __main__ - WARNING - LOGIN_FAILURE: User user_16 (CUSTOMER) from New Ronaldville, Philippines | IP: 104.140.98.106 | Session: sess_f6a398cc | Status: 401 | Severity: MEDIUM | Tags: authentication, employee, security-alert, monitored, web
+2025-04-13 18:00:37,782 - __main__ - ERROR - PRIVILEGE_ESCALATION: User user_56 (EMPLOYEE) from West Heatherstad, Barbados | IP: 200.112.177.232 | Session: sess_c661564f | Status: 400 | Severity: HIGH | Tags: authorization, contractor, security-threat, api
+2025-04-13 18:00:37,782 - high_severity - ERROR - PRIVILEGE_ESCALATION: User user_56 (EMPLOYEE) from West Heatherstad, Barbados | IP: 200.112.177.232 | Session: sess_c661564f | Status: 400 | Severity: HIGH | Tags: authorization, contractor, security-threat, api
+2025-04-13 18:00:37,783 - high_severity - ERROR - DETAILS: Attempted privilege escalation detected | Source: user-service | Target: reporting-service | Additional Info: {"target_role": "superuser", "method": "injection", "detection_source": "waf"}
+2025-04-13 18:00:38,786 - __main__ - INFO - LOGOUT: User user_2 (EMPLOYEE) from West Donald, Madagascar | IP: 200.112.177.232 | Session: sess_c661564f | Status: 200 | Severity: INFO | Tags: authentication, employee, api
+2025-04-13 18:00:39,790 - __main__ - WARNING - CONFIG_CHANGE: User user_82 (CUSTOMER) from West Joseph, Lebanon | IP: 98.81.135.190 | Session: sess_070f7d58 | Status: 200 | Severity: MEDIUM | Tags: system, customer
+2025-04-13 18:00:40,793 - __main__ - WARNING - DATA_MODIFICATION: User user_17 (CUSTOMER) from New Craigfurt, Lao People's Democratic Republic | IP: 136.216.182.240 | Session: sess_387edf9e | Status: 200 | Severity: MEDIUM | Tags: data, customer, monitored, api
+2025-04-13 18:00:41,799 - kafka.producer - INFO - Producer Statistics:
+2025-04-13 18:00:41,799 - kafka.producer - INFO - Total messages sent: 50 (1.02 msgs/sec)
+2025-04-13 18:00:41,799 - kafka.producer - INFO - Delivery success rate: 98.00% (49/50)
+2025-04-13 18:00:41,799 - kafka.producer - INFO - Runtime: 49.19 seconds
+2025-04-13 18:00:41,799 - kafka.producer - INFO - Top event types: LOGIN_SUCCESS: 15, LOGIN_FAILURE: 11, LOGOUT: 5
+2025-04-13 18:00:41,800 - kafka.producer - INFO - Severity distribution: INFO: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0
+2025-04-13 18:00:41,800 - __main__ - INFO - LOGIN_SUCCESS: User user_41 (EMPLOYEE) from Lisaton, United Arab Emirates | IP: 10.194.126.247 | Session: sess_6ca49af9 | Status: 200 | Severity: INFO | Tags: authentication, employee, logged, desktop
+2025-04-13 18:00:42,804 - __main__ - INFO - MFA_CHALLENGE: User user_57 (EMPLOYEE) from New Patriciaborough, Haiti | IP: 172.20.196.85 | Session: sess_ad81e8a1 | Status: 200 | Severity: LOW | Tags: authentication, contractor, monitored
+2025-04-13 18:00:43,807 - __main__ - INFO - LOGIN_SUCCESS: User user_9 (EMPLOYEE) from Jonesberg, Eritrea | IP: 220.118.232.32 | Session: sess_ad0ca077 | Status: 200 | Severity: INFO | Tags: authentication, employee, logged, api
+2025-04-13 18:00:44,809 - __main__ - ERROR - UNAUTHORIZED_ACCESS: User user_37 (ANONYMOUS) from South Christopher, Rwanda | IP: 195.185.146.1 | Session: sess_dc0fbeb3 | Status: 403 | Severity: HIGH | Tags: authorization, employee, api
+2025-04-13 18:00:44,809 - high_severity - ERROR - UNAUTHORIZED_ACCESS: User user_37 (ANONYMOUS) from South Christopher, Rwanda | IP: 195.185.146.1 | Session: sess_dc0fbeb3 | Status: 403 | Severity: HIGH | Tags: authorization, employee, api
+2025-04-13 18:00:44,810 - high_severity - ERROR - DETAILS: Unauthorized access attempt to /api/v2/user-management | Source: user-service | Target: notification-service | Additional Info: {"resource": "/api/v2/user-management", "required_role": "manager", "user_role": "viewer"}
+2025-04-13 18:00:45,811 - __main__ - INFO - LOGOUT: User user_33 (EMPLOYEE) from Houstonport, Gabon | IP: 220.118.232.32 | Session: sess_ad0ca077 | Status: 200 | Severity: INFO | Tags: authentication, employee, desktop
+2025-04-13 18:00:46,815 - __main__ - INFO - LOGIN_SUCCESS: User user_82 (CUSTOMER) from West Joseph, Lebanon | IP: 98.81.135.190 | Session: sess_0fef376f | Status: 200 | Severity: INFO | Tags: authentication, customer, mobile
+2025-04-13 18:00:47,820 - __main__ - WARNING - PASSWORD_CHANGE: User user_82 (CUSTOMER) from West Joseph, Lebanon | IP: 60.185.140.91 | Session: sess_fab92bdb | Status: 200 | Severity: MEDIUM | Tags: authentication, customer
+2025-04-13 18:00:48,597 - __main__ - INFO - Shutdown signal received, stopping generator...
+2025-04-13 18:00:48,645 - __main__ - INFO - Shutdown signal received, stopping generator...
+2025-04-13 18:00:48,821 - __main__ - INFO - Flushing producer...
+2025-04-13 18:00:48,821 - kafka.producer - INFO - Flushing producer...
+2025-04-13 18:00:48,821 - kafka.producer - INFO - All messages flushed successfully
+2025-04-13 18:00:48,821 - kafka.producer - INFO - Producer Statistics:
+2025-04-13 18:00:48,821 - kafka.producer - INFO - Total messages sent: 56 (1.00 msgs/sec)
+2025-04-13 18:00:48,821 - kafka.producer - INFO - Delivery success rate: 100.00% (56/56)
+2025-04-13 18:00:48,822 - kafka.producer - INFO - Runtime: 56.21 seconds
+2025-04-13 18:00:48,822 - kafka.producer - INFO - Top event types: LOGIN_SUCCESS: 17, LOGIN_FAILURE: 11, LOGOUT: 6
+2025-04-13 18:00:48,822 - kafka.producer - INFO - Severity distribution: INFO: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0
+2025-04-13 18:00:48,822 - __main__ - INFO - Generator stopped after sending 56 events (1.00/sec)
+2025-04-13 18:00:48,822 - __main__ - INFO - Runtime: 56.21 seconds
+2025-04-13 18:00:48,822 - __main__ - INFO - Event type distribution: {"LOGIN_SUCCESS": 17, "LOGIN_FAILURE": 11, "LOGOUT": 6, "UNAUTHORIZED_ACCESS": 5, "DATA_MODIFICATION": 2, "MFA_CHALLENGE": 2, "ACCOUNT_LOCKOUT": 4, "DATA_ACCESS": 3, "PRIVILEGE_ESCALATION": 2, "PERMISSION_CHANGE": 1, "PASSWORD_CHANGE": 2, "CONFIG_CHANGE": 1}
+2025-04-13 18:00:48,822 - __main__ - INFO - Severity distribution: {"Severity.INFO": 26, "Severity.MEDIUM": 16, "Severity.HIGH": 11, "Severity.CRITICAL": 2, "Severity.LOW": 1}
+2025-04-13 18:00:48,822 - __main__ - INFO - User type distribution: {"UserType.EMPLOYEE": 18, "UserType.CUSTOMER": 29, "UserType.ANONYMOUS": 8, "UserType.ADMIN": 1}
+----------  --------------------------------------
+Event ID    54c7a0aa-8335-4850-8638-115c2c2b467f
+User        user_16 (CUSTOMER)
+Message     Failed login attempt: account_disabled
+Location    New Ronaldville, Philippines
+IP Address  104.140.98.106
+----------  --------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: PRIVILEGE_ESCALATION | SEVERITY: HIGH | 2025-04-13T22:00:37.780959Z
+----------  ---------------------------------------
+Event ID    925ca746-92cb-4568-8acf-53229fa01a1f
+User        user_56 (EMPLOYEE)
+Message     Attempted privilege escalation detected
+Location    West Heatherstad, Barbados
+IP Address  200.112.177.232
+----------  ---------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGOUT | SEVERITY: INFO | 2025-04-13T22:00:38.785809Z
+----------  ------------------------------------
+Event ID    d3747753-3e92-4ffd-956e-99b5eec2468f
+User        user_2 (EMPLOYEE)
+Message     User logged out successfully
+Location    West Donald, Madagascar
+IP Address  200.112.177.232
+----------  ------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: CONFIG_CHANGE | SEVERITY: MEDIUM | 2025-04-13T22:00:39.789758Z
+----------  ----------------------------------------------
+Event ID    d8a99f57-be0d-4cb1-9ecf-748121be5a35
+User        user_82 (CUSTOMER)
+Message     Configuration changed: authentication settings
+Location    West Joseph, Lebanon
+IP Address  98.81.135.190
+----------  ----------------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: DATA_MODIFICATION | SEVERITY: MEDIUM | 2025-04-13T22:00:40.792633Z
+----------  -----------------------------------------------
+Event ID    e4d84ad1-b8c5-4ef9-beef-7256f33e1823
+User        user_17 (CUSTOMER)
+Message     Data modification: content records updated
+Location    New Craigfurt, Lao People's Democratic Republic
+IP Address  136.216.182.240
+----------  -----------------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGIN_SUCCESS | SEVERITY: INFO | 2025-04-13T22:00:41.798082Z
+----------  ------------------------------------
+Event ID    fa46c6c5-bf9c-4ac2-9db0-24c305ab34e7
+User        user_41 (EMPLOYEE)
+Message     Successful login attempt
+Location    Lisaton, United Arab Emirates
+IP Address  10.194.126.247
+----------  ------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: MFA_CHALLENGE | SEVERITY: LOW | 2025-04-13T22:00:42.803494Z
+----------  ------------------------------------
+Event ID    66e4b074-02ba-4f7d-bee8-b32d5ce0c188
+User        user_57 (EMPLOYEE)
+Message     MFA challenge completed
+Location    New Patriciaborough, Haiti
+IP Address  172.20.196.85
+----------  ------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGIN_SUCCESS | SEVERITY: INFO | 2025-04-13T22:00:43.807025Z
+----------  ------------------------------------
+Event ID    9525e9a1-f51a-4ffb-912d-ae72944f3c99
+User        user_9 (EMPLOYEE)
+Message     Successful login attempt
+Location    Jonesberg, Eritrea
+IP Address  220.118.232.32
+----------  ------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: UNAUTHORIZED_ACCESS | SEVERITY: HIGH | 2025-04-13T22:00:44.808565Z
+----------  ------------------------------------------------------
+Event ID    a6caa54d-b54e-46f7-b641-a3cf09d88759
+User        user_37 (ANONYMOUS)
+Message     Unauthorized access attempt to /api/v2/user-management
+Location    South Christopher, Rwanda
+IP Address  195.185.146.1
+----------  ------------------------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGOUT | SEVERITY: INFO | 2025-04-13T22:00:45.810306Z
+----------  ------------------------------------
+Event ID    87ae8ac0-865a-40a9-8f1a-6825b5a32ed2
+User        user_33 (EMPLOYEE)
+Message     User logged out successfully
+Location    Houstonport, Gabon
+IP Address  220.118.232.32
+----------  ------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: LOGIN_SUCCESS | SEVERITY: INFO | 2025-04-13T22:00:46.814767Z
+----------  ------------------------------------
+Event ID    f696d012-d28b-4532-8455-1ac3c02bf795
+User        user_82 (CUSTOMER)
+Message     Successful login attempt
+Location    West Joseph, Lebanon
+IP Address  98.81.135.190
+----------  ------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PRODUCING: PASSWORD_CHANGE | SEVERITY: MEDIUM | 2025-04-13T22:00:47.820286Z
+----------  ------------------------------------
+Event ID    6e756769-3f1f-4692-97b2-cc80dd7d2326
+User        user_82 (CUSTOMER)
+Message     Password successfully changed
+Location    West Joseph, Lebanon
+IP Address  60.185.140.91
+----------  ------------------------------------
+--------------------------------------------------------------------------------

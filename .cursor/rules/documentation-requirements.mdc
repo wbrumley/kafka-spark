@@ -1,0 +1,16 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Your rule content
+
+- You can @ files here
+- You can use markdown but dont have to
+
+Include README.md with setup instructions
+Document all event types and their structures
+Maintain requirements.txt up to date
+Include deployment instructions
+Document known limitations

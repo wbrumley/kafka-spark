@@ -1,0 +1,17 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Your rule content
+
+- You can @ files here
+- You can use markdown but dont have to
+
+Code Standards:
+Use Python type hints throughout the codebase
+Implement proper logging with Python's logging module
+Use dataclasses or Pydantic models for event structures
+Follow PEP 8 style guidelines
+Use async/await for I/O operations where applicable

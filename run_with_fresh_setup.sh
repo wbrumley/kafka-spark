@@ -1,0 +1,1 @@
+scripts/run_with_fresh_setup.sh

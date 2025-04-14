@@ -1,0 +1,79 @@
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8502
+  Network URL: http://192.168.1.67:8502
+
+2025-04-13 18:00:23,556 - streamlit_dashboard - INFO - Starting Kafka consumer thread
+2025-04-13 18:00:23,557 - streamlit_dashboard - INFO - Connecting to Kafka at localhost:9092, topic: dev_security_logs
+2025-04-13 18:00:23,592 - streamlit_dashboard - INFO - Subscribed to topic dev_security_logs
+2025-04-13 18:00:23.593 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:23.602 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:23.609 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:23.609 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:23.610 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:23.611 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:23.612 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:23.613 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:23.613 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:27,751 - streamlit_dashboard - INFO - Processed event: 5d67d3ef-0977-4822-b0b2-f095722e0b26 of type LOGIN_SUCCESS (rate: 1/30 per minute)
+2025-04-13 18:00:27,751 - streamlit_dashboard - INFO - Processed event: 0749b8f8-8fac-47ab-a713-02fe00000780 of type LOGIN_FAILURE (rate: 2/30 per minute)
+2025-04-13 18:00:27,751 - streamlit_dashboard - INFO - Processed event: 04b53d76-4bbe-4bda-abea-8b645c40134a of type LOGIN_SUCCESS (rate: 3/30 per minute)
+2025-04-13 18:00:27,751 - streamlit_dashboard - INFO - Processed event: a286aa9f-2ef6-493a-bc44-880a6a3fb250 of type LOGOUT (rate: 4/30 per minute)
+2025-04-13 18:00:27,751 - streamlit_dashboard - INFO - Processed event: 7de7498b-e7a4-488f-a229-2ca246e81761 of type UNAUTHORIZED_ACCESS (rate: 5/30 per minute)
+2025-04-13 18:00:27,751 - streamlit_dashboard - INFO - Processed event: f5d295d1-8297-4b55-8d5a-af8881438ea4 of type DATA_MODIFICATION (rate: 6/30 per minute)
+2025-04-13 18:00:27,751 - streamlit_dashboard - INFO - Processed event: 18a999fd-7585-4968-8d45-f12ed967281b of type MFA_CHALLENGE (rate: 7/30 per minute)
+2025-04-13 18:00:27,752 - streamlit_dashboard - INFO - Processed event: c45773cf-5dae-493c-a4be-5739c16a3b08 of type LOGIN_SUCCESS (rate: 8/30 per minute)
+2025-04-13 18:00:27,752 - streamlit_dashboard - INFO - Processed event: 5313f2b5-d5b2-4858-af12-8a5588170f40 of type LOGIN_SUCCESS (rate: 9/30 per minute)
+2025-04-13 18:00:27,752 - streamlit_dashboard - INFO - Processed event: f85cd9ca-4d3c-4378-9671-0e764e110885 of type LOGIN_FAILURE (rate: 10/30 per minute)
+2025-04-13 18:00:27.754 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:27.754 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:27.754 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:27.755 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:27.755 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:27,756 - streamlit_dashboard - INFO - Processed event: d1a7f998-3eb0-42e3-91eb-de0e9c8da5ee of type ACCOUNT_LOCKOUT (rate: 11/30 per minute)
+2025-04-13 18:00:27,756 - streamlit_dashboard - INFO - Processed event: 594d5f28-6b9d-42be-9309-062e2468e689 of type DATA_ACCESS (rate: 12/30 per minute)
+2025-04-13 18:00:27,757 - streamlit_dashboard - INFO - Processed event: 9cc1942c-a458-4712-bc3b-e0d2bb745154 of type UNAUTHORIZED_ACCESS (rate: 13/30 per minute)
+2025-04-13 18:00:27,757 - streamlit_dashboard - INFO - Processed event: a8937b48-a935-4abf-a92c-b1bac8033bc0 of type UNAUTHORIZED_ACCESS (rate: 14/30 per minute)
+2025-04-13 18:00:27,757 - streamlit_dashboard - INFO - Processed event: a1d562b1-6c08-4bb7-b294-450a6dc10f92 of type ACCOUNT_LOCKOUT (rate: 15/30 per minute)
+2025-04-13 18:00:27,757 - streamlit_dashboard - INFO - Processed event: fad0eb0e-e182-4913-8f7c-8ffbe29dc863 of type LOGIN_FAILURE (rate: 16/30 per minute)
+2025-04-13 18:00:27,757 - streamlit_dashboard - INFO - Processed event: 899155a2-e0f6-4d02-b151-4a18d28c13a3 of type LOGIN_FAILURE (rate: 17/30 per minute)
+2025-04-13 18:00:27,757 - streamlit_dashboard - INFO - Processed event: 2904b7a3-d5e4-4d96-b505-9e5d7de3a96a of type PRIVILEGE_ESCALATION (rate: 18/30 per minute)
+2025-04-13 18:00:27,758 - streamlit_dashboard - INFO - Processed event: e456b51a-77f0-4d6d-a153-170dc1a296e6 of type DATA_ACCESS (rate: 19/30 per minute)
+2025-04-13 18:00:27,758 - streamlit_dashboard - INFO - Processed event: de23d500-ee88-4afb-a629-f12c494705b9 of type LOGIN_SUCCESS (rate: 20/30 per minute)
+2025-04-13 18:00:27,758 - streamlit_dashboard - INFO - Processed event: 22f7ddde-8bb5-46f1-8994-640b0e2d42d3 of type LOGIN_SUCCESS (rate: 21/30 per minute)
+2025-04-13 18:00:27,758 - streamlit_dashboard - INFO - Processed event: 46a15809-b7b4-4f52-83ff-27dbdf042445 of type ACCOUNT_LOCKOUT (rate: 22/30 per minute)
+2025-04-13 18:00:27.761 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:27.761 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:27.761 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:27.761 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:27.761 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:27,868 - streamlit_dashboard - INFO - Processed event: 9770ee7a-a14b-488b-b2ac-ddfd519f133c of type LOGIN_SUCCESS (rate: 23/30 per minute)
+2025-04-13 18:00:27,868 - streamlit_dashboard - INFO - Processed event: bbd130ed-67e6-49e2-a37c-78be7c9e1813 of type ACCOUNT_LOCKOUT (rate: 24/30 per minute)
+2025-04-13 18:00:27,869 - streamlit_dashboard - INFO - Processed event: b5c6e7ab-535f-4ac0-b456-d9373c0b7672 of type LOGIN_SUCCESS (rate: 25/30 per minute)
+2025-04-13 18:00:28,914 - streamlit_dashboard - INFO - Processed event: 66bf0bfe-74ba-4360-a883-bbbf6d54869c of type LOGIN_FAILURE (rate: 26/30 per minute)
+2025-04-13 18:00:29.879 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:29.879 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:29.879 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:29.879 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:29.880 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:30,871 - streamlit_dashboard - INFO - Processed event: 3753396b-a3db-4f3d-96f9-94e53fd3937c of type LOGIN_SUCCESS (rate: 27/30 per minute)
+2025-04-13 18:00:32.889 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:32.889 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:32.889 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:32.889 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:32.889 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:33,879 - streamlit_dashboard - INFO - Processed event: 26315f17-c593-46c0-8a6d-1bb4e619dddc of type LOGIN_FAILURE (rate: 28/30 per minute)
+2025-04-13 18:00:34.986 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:34.992 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:34.998 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:34.999 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:35.005 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:36,893 - streamlit_dashboard - INFO - Processed event: 54c7a0aa-8335-4850-8638-115c2c2b467f of type LOGIN_FAILURE (rate: 29/30 per minute)
+2025-04-13 18:00:37,892 - streamlit_dashboard - INFO - Processed event: 925ca746-92cb-4568-8acf-53229fa01a1f of type PRIVILEGE_ESCALATION (rate: 30/30 per minute)
+2025-04-13 18:00:37.899 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:37.899 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:37.899 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:37.900 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-04-13 18:00:37.900 Thread 'Thread-3': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+  Stopping...

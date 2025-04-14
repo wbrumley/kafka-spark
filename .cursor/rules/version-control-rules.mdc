@@ -1,0 +1,15 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Your rule content
+
+- You can @ files here
+- You can use markdown but dont have to
+
+Use meaningful commit messages
+Keep sensitive information out of version control
+Include .gitignore for Python/Kafka/environment files
+Maintain a clean main branch

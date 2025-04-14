@@ -1,0 +1,756 @@
+2025-04-13 17:59:54,441 - __main__ - INFO - Successfully imported dependencies
+2025-04-13 17:59:54,442 - __main__ - INFO - Creating Spark session
+:: loading settings :: url = jar:file:/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/williambrumley/.ivy2/cache
+The jars for the packages stored in: /Users/williambrumley/.ivy2/jars
+org.apache.spark#spark-sql-kafka-0-10_2.12 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-d252b1e2-1f3d-4edd-967c-8f3be42ff1a0;1.0
+	confs: [default]
+	found org.apache.spark#spark-sql-kafka-0-10_2.12;3.4.1 in central
+	found org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.4.1 in central
+	found org.apache.kafka#kafka-clients;3.3.2 in central
+	found org.lz4#lz4-java;1.8.0 in central
+	found org.xerial.snappy#snappy-java;1.1.10.1 in central
+	found org.slf4j#slf4j-api;2.0.6 in central
+	found org.apache.hadoop#hadoop-client-runtime;3.3.4 in central
+	found org.apache.hadoop#hadoop-client-api;3.3.4 in central
+	found commons-logging#commons-logging;1.1.3 in central
+	found com.google.code.findbugs#jsr305;3.0.0 in central
+	found org.apache.commons#commons-pool2;2.11.1 in central
+:: resolution report :: resolve 451ms :: artifacts dl 14ms
+	:: modules in use:
+	com.google.code.findbugs#jsr305;3.0.0 from central in [default]
+	commons-logging#commons-logging;1.1.3 from central in [default]
+	org.apache.commons#commons-pool2;2.11.1 from central in [default]
+	org.apache.hadoop#hadoop-client-api;3.3.4 from central in [default]
+	org.apache.hadoop#hadoop-client-runtime;3.3.4 from central in [default]
+	org.apache.kafka#kafka-clients;3.3.2 from central in [default]
+	org.apache.spark#spark-sql-kafka-0-10_2.12;3.4.1 from central in [default]
+	org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.4.1 from central in [default]
+	org.lz4#lz4-java;1.8.0 from central in [default]
+	org.slf4j#slf4j-api;2.0.6 from central in [default]
+	org.xerial.snappy#snappy-java;1.1.10.1 from central in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   11  |   0   |   0   |   0   ||   11  |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-d252b1e2-1f3d-4edd-967c-8f3be42ff1a0
+	confs: [default]
+	0 artifacts copied, 11 already retrieved (0kB/7ms)
+25/04/13 17:59:57 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+2025-04-13 17:59:59,548 - __main__ - INFO - Kafka Bootstrap Servers: localhost:9092
+2025-04-13 17:59:59,548 - __main__ - INFO - Kafka Topic: dev_security_logs
+2025-04-13 17:59:59,549 - __main__ - INFO - Starting offsets: earliest
+2025-04-13 18:00:03,124 - __main__ - INFO - DataFrame schema:
+2025-04-13 18:00:03,465 - py4j.java_gateway - INFO - Callback Server Starting
+2025-04-13 18:00:03,465 - py4j.java_gateway - INFO - Socket listening on ('127.0.0.1', 58738)
+25/04/13 18:00:03 WARN ResolveWriteToStream: Temporary checkpoint location created which is deleted normally when the query didn't fail: /private/var/folders/ch/sq1sdpjx2gj56syk85bz8rwh0000gp/T/temporary-b6659763-3989-45e4-bdc4-b832b0ed9d98. If it's required to delete it under any circumstances, please set spark.sql.streaming.forceDeleteTempCheckpointLocation to true. Important to know deleting temp checkpoint folder is best effort.
+25/04/13 18:00:03 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+2025-04-13 18:00:03,832 - __main__ - INFO - Streaming query started. Press Ctrl+C to stop.
+25/04/13 18:00:04 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+2025-04-13 18:00:05,507 - py4j.clientserver - INFO - Python Server ready to receive messages
+2025-04-13 18:00:05,508 - py4j.clientserver - INFO - Received command c on object id p0
+[Stage 0:>                                                          (0 + 0) / 1][Stage 0:>                                                          (0 + 1) / 1]                                                                                2025-04-13 18:00:06,837 - __main__ - INFO - Batch 0: 12 records
+2025-04-13 18:00:07,950 - py4j.clientserver - INFO - Received command c on object id p0
+[Stage 2:>                                                          (0 + 1) / 1]                                                                                2025-04-13 18:00:08,549 - __main__ - INFO - Batch 1: 4 records
+2025-04-13 18:00:08,929 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:09,494 - __main__ - INFO - Batch 2: 1 records
+2025-04-13 18:00:09,869 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:10,441 - __main__ - INFO - Batch 3: 1 records
+root
+ |-- event_id: string (nullable = true)
+ |-- timestamp: string (nullable = true)
+ |-- event_type: string (nullable = true)
+ |-- user_id: string (nullable = true)
+ |-- user_type: string (nullable = true)
+ |-- ip_address: string (nullable = true)
+ |-- severity: string (nullable = true)
+ |-- message: string (nullable = true)
+ |-- source_system: string (nullable = true)
+
+
+================================================================================
+SECURITY EVENTS BATCH 0
+Timestamp: 2025-04-13 18:00:06
+Record count: 12
+================================================================================
++--------------------------------------+-----------------------------+---------------------+-----------+-------------+-----------------+------------+--------------------------------------------------------+----------------------+
+| event_id                             | timestamp                   | event_type          | user_id   | user_type   | ip_address      | severity   | message                                                | source_system        |
+|--------------------------------------+-----------------------------+---------------------+-----------+-------------+-----------------+------------+--------------------------------------------------------+----------------------|
+| 5d67d3ef-0977-4822-b0b2-f095722e0b26 | 2025-04-13T21:59:52.613552Z | LOGIN_SUCCESS       | user_10   | EMPLOYEE    | 84.232.32.105   | INFO       | Successful login attempt                               | auth-service         |
+| 0749b8f8-8fac-47ab-a713-02fe00000780 | 2025-04-13T21:59:53.619714Z | LOGIN_FAILURE       | user_10   | EMPLOYEE    | 84.232.32.105   | MEDIUM     | Failed login attempt: account_locked                   | user-service         |
+| 04b53d76-4bbe-4bda-abea-8b645c40134a | 2025-04-13T21:59:54.624370Z | LOGIN_SUCCESS       | user_17   | CUSTOMER    | 136.216.182.240 | INFO       | Successful login attempt                               | user-service         |
+| a286aa9f-2ef6-493a-bc44-880a6a3fb250 | 2025-04-13T21:59:55.625933Z | LOGOUT              | user_81   | EMPLOYEE    | 84.232.32.105   | INFO       | User logged out successfully                           | mobile-app           |
+| 7de7498b-e7a4-488f-a229-2ca246e81761 | 2025-04-13T21:59:56.628333Z | UNAUTHORIZED_ACCESS | user_17   | CUSTOMER    | 136.216.182.240 | HIGH       | Unauthorized access attempt to /api/v1/payment-methods | data-service         |
+| f5d295d1-8297-4b55-8d5a-af8881438ea4 | 2025-04-13T21:59:57.632912Z | DATA_MODIFICATION   | user_17   | CUSTOMER    | 136.216.182.240 | HIGH       | Data modification: configuration records updated       | auth-service         |
+| 18a999fd-7585-4968-8d45-f12ed967281b | 2025-04-13T21:59:58.634107Z | MFA_CHALLENGE       | user_17   | CUSTOMER    | 136.216.182.240 | MEDIUM     | MFA challenge completed                                | notification-service |
+| c45773cf-5dae-493c-a4be-5739c16a3b08 | 2025-04-13T21:59:59.639495Z | LOGIN_SUCCESS       | user_37   | ANONYMOUS   | 195.185.146.1   | INFO       | Successful login attempt                               | auth-service         |
+| 5313f2b5-d5b2-4858-af12-8a5588170f40 | 2025-04-13T22:00:00.641133Z | LOGIN_SUCCESS       | user_16   | CUSTOMER    | 104.140.98.106  | INFO       | Successful login attempt                               | notification-service |
+| f85cd9ca-4d3c-4378-9671-0e764e110885 | 2025-04-13T22:00:01.644248Z | LOGIN_FAILURE       | user_37   | ANONYMOUS   | 195.185.146.1   | MEDIUM     | Failed login attempt: invalid_2fa                      | auth-service         |
+| d1a7f998-3eb0-42e3-91eb-de0e9c8da5ee | 2025-04-13T22:00:02.647864Z | ACCOUNT_LOCKOUT     | user_17   | CUSTOMER    | 136.216.182.240 | CRITICAL   | Account locked due to excessive failed login attempts  | auth-service         |
+| 594d5f28-6b9d-42be-9309-062e2468e689 | 2025-04-13T22:00:03.650658Z | DATA_ACCESS         | user_37   | ANONYMOUS   | 195.185.146.1   | INFO       | Data access: customer records                          | user-service         |
++--------------------------------------+-----------------------------+---------------------+-----------+-------------+-----------------+------------+--------------------------------------------------------+----------------------+
+
+================================================================================
+SECURITY EVENTS BATCH 1
+Timestamp: 2025-04-13 18:00:08
+Record count: 4
+================================================================================
++--------------------------------------+-----------------------------+---------------------+-----------+-------------+-----------------+------------+-------------------------------------------------------+-------------------+
+| event_id                             | timestamp                   | event_type          | user_id   | user_type   | ip_address      | severity   | message                                               | source_system     |
+|--------------------------------------+-----------------------------+---------------------+-----------+-------------+-----------------+------------+-------------------------------------------------------+-------------------|
+| 9cc1942c-a458-4712-bc3b-e0d2bb745154 | 2025-04-13T22:00:04.656526Z | UNAUTHORIZED_ACCESS | user_37   | ANONYMOUS   | 195.185.146.1   | HIGH       | Unauthorized access attempt to /api/logs              | web-portal        |
+| a8937b48-a935-4abf-a92c-b1bac8033bc0 | 2025-04-13T22:00:05.660716Z | UNAUTHORIZED_ACCESS | user_17   | CUSTOMER    | 136.216.182.240 | MEDIUM     | Unauthorized access attempt to /api/users             | data-service      |
+| a1d562b1-6c08-4bb7-b294-450a6dc10f92 | 2025-04-13T22:00:06.661710Z | ACCOUNT_LOCKOUT     | user_17   | CUSTOMER    | 136.216.182.240 | HIGH       | Account locked due to excessive failed login attempts | reporting-service |
+| fad0eb0e-e182-4913-8f7c-8ffbe29dc863 | 2025-04-13T22:00:07.664232Z | LOGIN_FAILURE       | user_37   | ANONYMOUS   | 195.185.146.1   | HIGH       | Failed login attempt: invalid_2fa                     | admin-panel       |
++--------------------------------------+-----------------------------+---------------------+-----------+-------------+-----------------+------------+-------------------------------------------------------+-------------------+
+
+================================================================================
+SECURITY EVENTS BATCH 2
+Timestamp: 2025-04-13 18:00:09
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+---------------+-----------+-------------+----------------+------------+--------------------------+-----------------+
+| event_id                             | timestamp                   | event_type    | user_id   | user_type   | ip_address     | severity   | message                  | source_system   |
+|--------------------------------------+-----------------------------+---------------+-----------+-------------+----------------+------------+--------------------------+-----------------|
+| 547d575c-faa1-4aa3-987c-40c9712f6b2d | 2025-04-13T22:00:08.667689Z | LOGIN_SUCCESS | user_32   | CUSTOMER    | 207.22.172.201 | INFO       | Successful login attempt | billing-service |
++--------------------------------------+-----------------------------+---------------+-----------+-------------+----------------+------------+--------------------------+-----------------+
+
+================================================================================
+SECURITY EVENTS BATCH 3
+Timestamp: 2025-04-13 18:00:10
+Record count: 1
+================================================================================
+2025-04-13 18:00:10,838 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:11,394 - __main__ - INFO - Batch 4: 1 records
+2025-04-13 18:00:11,845 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:12,411 - __main__ - INFO - Batch 5: 1 records
+2025-04-13 18:00:12,852 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:13,411 - __main__ - INFO - Batch 6: 1 records
+2025-04-13 18:00:13,953 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:14,524 - __main__ - INFO - Batch 7: 1 records
+2025-04-13 18:00:14,857 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:15,407 - __main__ - INFO - Batch 8: 1 records
+2025-04-13 18:00:15,841 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:16,389 - __main__ - INFO - Batch 9: 1 records
++--------------------------------------+-----------------------------+---------------+-----------+-------------+----------------+------------+----------------------------------------+-----------------+
+| event_id                             | timestamp                   | event_type    | user_id   | user_type   | ip_address     | severity   | message                                | source_system   |
+|--------------------------------------+-----------------------------+---------------+-----------+-------------+----------------+------------+----------------------------------------+-----------------|
+| 899155a2-e0f6-4d02-b151-4a18d28c13a3 | 2025-04-13T22:00:09.670325Z | LOGIN_FAILURE | user_16   | CUSTOMER    | 104.140.98.106 | HIGH       | Failed login attempt: invalid_username | mobile-app      |
++--------------------------------------+-----------------------------+---------------+-----------+-------------+----------------+------------+----------------------------------------+-----------------+
+
+================================================================================
+SECURITY EVENTS BATCH 4
+Timestamp: 2025-04-13 18:00:11
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+--------------+-----------+-------------+----------------+------------+-------------------------------+-------------------+
+| event_id                             | timestamp                   | event_type   | user_id   | user_type   | ip_address     | severity   | message                       | source_system     |
+|--------------------------------------+-----------------------------+--------------+-----------+-------------+----------------+------------+-------------------------------+-------------------|
+| 7803a4b0-a5ac-4e8f-b7a9-118dcb4e628a | 2025-04-13T22:00:10.675756Z | DATA_ACCESS  | user_32   | CUSTOMER    | 207.22.172.201 | INFO       | Data access: employee records | reporting-service |
++--------------------------------------+-----------------------------+--------------+-----------+-------------+----------------+------------+-------------------------------+-------------------+
+
+================================================================================
+SECURITY EVENTS BATCH 5
+Timestamp: 2025-04-13 18:00:12
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+----------------------+-----------+-------------+----------------+------------+-----------------------------------------+-----------------+
+| event_id                             | timestamp                   | event_type           | user_id   | user_type   | ip_address     | severity   | message                                 | source_system   |
+|--------------------------------------+-----------------------------+----------------------+-----------+-------------+----------------+------------+-----------------------------------------+-----------------|
+| 2904b7a3-d5e4-4d96-b505-9e5d7de3a96a | 2025-04-13T22:00:11.680523Z | PRIVILEGE_ESCALATION | user_16   | CUSTOMER    | 104.140.98.106 | CRITICAL   | Attempted privilege escalation detected | data-service    |
++--------------------------------------+-----------------------------+----------------------+-----------+-------------+----------------+------------+-----------------------------------------+-----------------+
+
+================================================================================
+SECURITY EVENTS BATCH 6
+Timestamp: 2025-04-13 18:00:13
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+--------------+-----------+-------------+-----------------+------------+-------------------------------+-----------------+
+| event_id                             | timestamp                   | event_type   | user_id   | user_type   | ip_address      | severity   | message                       | source_system   |
+|--------------------------------------+-----------------------------+--------------+-----------+-------------+-----------------+------------+-------------------------------+-----------------|
+| e456b51a-77f0-4d6d-a153-170dc1a296e6 | 2025-04-13T22:00:12.683576Z | DATA_ACCESS  | user_17   | CUSTOMER    | 136.216.182.240 | INFO       | Data access: employee records | billing-service |
++--------------------------------------+-----------------------------+--------------+-----------+-------------+-----------------+------------+-------------------------------+-----------------+
+
+================================================================================
+SECURITY EVENTS BATCH 7
+Timestamp: 2025-04-13 18:00:14
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+---------------+-----------+-------------+---------------+------------+--------------------------+-----------------+
+| event_id                             | timestamp                   | event_type    | user_id   | user_type   | ip_address    | severity   | message                  | source_system   |
+|--------------------------------------+-----------------------------+---------------+-----------+-------------+---------------+------------+--------------------------+-----------------|
+| f9972c93-9c7c-4166-9e87-331e27ac5be0 | 2025-04-13T22:00:13.685813Z | LOGIN_SUCCESS | user_57   | EMPLOYEE    | 172.20.196.85 | INFO       | Successful login attempt | api-gateway     |
++--------------------------------------+-----------------------------+---------------+-----------+-------------+---------------+------------+--------------------------+-----------------+
+
+================================================================================
+SECURITY EVENTS BATCH 8
+Timestamp: 2025-04-13 18:00:15
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+---------------+-----------+-------------+---------------+------------+--------------------------+----------------------+
+| event_id                             | timestamp                   | event_type    | user_id   | user_type   | ip_address    | severity   | message                  | source_system        |
+|--------------------------------------+-----------------------------+---------------+-----------+-------------+---------------+------------+--------------------------+----------------------|
+| 043340eb-b1e9-48ea-a95c-62ae62ef4d3a | 2025-04-13T22:00:14.689943Z | LOGIN_SUCCESS | user_79   | EMPLOYEE    | 192.168.77.17 | INFO       | Successful login attempt | notification-service |
++--------------------------------------+-----------------------------+---------------+-----------+-------------+---------------+------------+--------------------------+----------------------+
+
+================================================================================
+SECURITY EVENTS BATCH 9
+Timestamp: 2025-04-13 18:00:16
+Record count: 1
+================================================================================
+2025-04-13 18:00:16,836 - py4j.clientserver - INFO - Received command c on object id p0
+[Stage 20:>                                                         (0 + 1) / 1]                                                                                2025-04-13 18:00:17,382 - __main__ - INFO - Batch 10: 1 records
+2025-04-13 18:00:17,836 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:18,381 - __main__ - INFO - Batch 11: 1 records
+2025-04-13 18:00:18,871 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:19,419 - __main__ - INFO - Batch 12: 1 records
+2025-04-13 18:00:19,859 - py4j.clientserver - INFO - Received command c on object id p0
+[Stage 26:>                                                         (0 + 1) / 1]                                                                                2025-04-13 18:00:20,401 - __main__ - INFO - Batch 13: 1 records
+2025-04-13 18:00:20,845 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:21,386 - __main__ - INFO - Batch 14: 1 records
+2025-04-13 18:00:21,863 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:22,410 - __main__ - INFO - Batch 15: 1 records
++--------------------------------------+-----------------------------+---------------+-----------+-------------+-----------------+------------+--------------------------+-----------------+
+| event_id                             | timestamp                   | event_type    | user_id   | user_type   | ip_address      | severity   | message                  | source_system   |
+|--------------------------------------+-----------------------------+---------------+-----------+-------------+-----------------+------------+--------------------------+-----------------|
+| de23d500-ee88-4afb-a629-f12c494705b9 | 2025-04-13T22:00:15.691519Z | LOGIN_SUCCESS | user_56   | EMPLOYEE    | 200.112.177.232 | INFO       | Successful login attempt | billing-service |
++--------------------------------------+-----------------------------+---------------+-----------+-------------+-----------------+------------+--------------------------+-----------------+
+
+================================================================================
+SECURITY EVENTS BATCH 10
+Timestamp: 2025-04-13 18:00:17
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+---------------+-----------+-------------+---------------+------------+----------------------------------------+-----------------+
+| event_id                             | timestamp                   | event_type    | user_id   | user_type   | ip_address    | severity   | message                                | source_system   |
+|--------------------------------------+-----------------------------+---------------+-----------+-------------+---------------+------------+----------------------------------------+-----------------|
+| 31c20dfb-12ef-415c-a417-3a8e18789ba3 | 2025-04-13T22:00:16.693426Z | LOGIN_FAILURE | user_37   | ANONYMOUS   | 195.185.146.1 | MEDIUM     | Failed login attempt: expired_password | api-gateway     |
++--------------------------------------+-----------------------------+---------------+-----------+-------------+---------------+------------+----------------------------------------+-----------------+
+
+================================================================================
+SECURITY EVENTS BATCH 11
+Timestamp: 2025-04-13 18:00:18
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+---------------+-----------+-------------+----------------+------------+-----------------------------------+-----------------+
+| event_id                             | timestamp                   | event_type    | user_id   | user_type   | ip_address     | severity   | message                           | source_system   |
+|--------------------------------------+-----------------------------+---------------+-----------+-------------+----------------+------------+-----------------------------------+-----------------|
+| ace083ee-cb82-41d1-b160-443757a6e5af | 2025-04-13T22:00:17.696093Z | LOGIN_FAILURE | user_16   | CUSTOMER    | 104.140.98.106 | MEDIUM     | Failed login attempt: invalid_2fa | data-service    |
++--------------------------------------+-----------------------------+---------------+-----------+-------------+----------------+------------+-----------------------------------+-----------------+
+
+================================================================================
+SECURITY EVENTS BATCH 12
+Timestamp: 2025-04-13 18:00:19
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+---------------+-----------+-------------+----------------+------------+--------------------------+-----------------+
+| event_id                             | timestamp                   | event_type    | user_id   | user_type   | ip_address     | severity   | message                  | source_system   |
+|--------------------------------------+-----------------------------+---------------+-----------+-------------+----------------+------------+--------------------------+-----------------|
+| 22f7ddde-8bb5-46f1-8994-640b0e2d42d3 | 2025-04-13T22:00:18.699815Z | LOGIN_SUCCESS | user_92   | EMPLOYEE    | 41.240.249.225 | INFO       | Successful login attempt | billing-service |
++--------------------------------------+-----------------------------+---------------+-----------+-------------+----------------+------------+--------------------------+-----------------+
+
+================================================================================
+SECURITY EVENTS BATCH 13
+Timestamp: 2025-04-13 18:00:20
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+-------------------+-----------+-------------+-----------------+------------+---------------------------+-----------------+
+| event_id                             | timestamp                   | event_type        | user_id   | user_type   | ip_address      | severity   | message                   | source_system   |
+|--------------------------------------+-----------------------------+-------------------+-----------+-------------+-----------------+------------+---------------------------+-----------------|
+| daaf76f9-418e-47fd-ae7e-cdd118f02eab | 2025-04-13T22:00:19.708947Z | PERMISSION_CHANGE | user_56   | EMPLOYEE    | 200.112.177.232 | MEDIUM     | User permissions modified | mobile-app      |
++--------------------------------------+-----------------------------+-------------------+-----------+-------------+-----------------+------------+---------------------------+-----------------+
+
+================================================================================
+SECURITY EVENTS BATCH 14
+Timestamp: 2025-04-13 18:00:21
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+---------------+-----------+-------------+---------------+------------+----------------------------------------+-----------------+
+| event_id                             | timestamp                   | event_type    | user_id   | user_type   | ip_address    | severity   | message                                | source_system   |
+|--------------------------------------+-----------------------------+---------------+-----------+-------------+---------------+------------+----------------------------------------+-----------------|
+| f3725360-2890-4cf3-b033-88ab10f925b9 | 2025-04-13T22:00:20.710251Z | LOGIN_FAILURE | user_79   | EMPLOYEE    | 192.168.77.17 | MEDIUM     | Failed login attempt: expired_password | admin-panel     |
++--------------------------------------+-----------------------------+---------------+-----------+-------------+---------------+------------+----------------------------------------+-----------------+
+
+================================================================================
+SECURITY EVENTS BATCH 15
+Timestamp: 2025-04-13 18:00:22
+Record count: 1
+================================================================================
+2025-04-13 18:00:23,161 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:23,718 - __main__ - INFO - Batch 16: 1 records
+[Stage 33:>                                                         (0 + 1) / 1]                                                                                2025-04-13 18:00:24,460 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:24,747 - __main__ - INFO - Batch 17: 1 records
+2025-04-13 18:00:24,899 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:25,446 - __main__ - INFO - Batch 18: 1 records
+2025-04-13 18:00:25,914 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:26,468 - __main__ - INFO - Batch 19: 1 records
+2025-04-13 18:00:26,880 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:27,418 - __main__ - INFO - Batch 20: 1 records
+2025-04-13 18:00:27,890 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:28,429 - __main__ - INFO - Batch 21: 1 records
++--------------------------------------+-----------------------------+-----------------+-----------+-------------+---------------+------------+-------------------------------------------------------+-----------------+
+| event_id                             | timestamp                   | event_type      | user_id   | user_type   | ip_address    | severity   | message                                               | source_system   |
+|--------------------------------------+-----------------------------+-----------------+-----------+-------------+---------------+------------+-------------------------------------------------------+-----------------|
+| 46a15809-b7b4-4f52-83ff-27dbdf042445 | 2025-04-13T22:00:21.713986Z | ACCOUNT_LOCKOUT | user_37   | ANONYMOUS   | 195.185.146.1 | HIGH       | Account locked due to excessive failed login attempts | data-service    |
++--------------------------------------+-----------------------------+-----------------+-----------+-------------+---------------+------------+-------------------------------------------------------+-----------------+
+
+================================================================================
+SECURITY EVENTS BATCH 16
+Timestamp: 2025-04-13 18:00:23
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+--------------+-----------+-------------+---------------+------------+------------------------------+-----------------+
+| event_id                             | timestamp                   | event_type   | user_id   | user_type   | ip_address    | severity   | message                      | source_system   |
+|--------------------------------------+-----------------------------+--------------+-----------+-------------+---------------+------------+------------------------------+-----------------|
+| e39bd3e9-f604-48a3-8c43-1abc1499cb77 | 2025-04-13T22:00:22.719511Z | LOGOUT       | user_4    | EMPLOYEE    | 192.168.77.17 | INFO       | User logged out successfully | billing-service |
++--------------------------------------+-----------------------------+--------------+-----------+-------------+---------------+------------+------------------------------+-----------------+
+
+================================================================================
+SECURITY EVENTS BATCH 17
+Timestamp: 2025-04-13 18:00:24
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+--------------+-----------+-------------+----------------+------------+------------------------------+-----------------+
+| event_id                             | timestamp                   | event_type   | user_id   | user_type   | ip_address     | severity   | message                      | source_system   |
+|--------------------------------------+-----------------------------+--------------+-----------+-------------+----------------+------------+------------------------------+-----------------|
+| 7f8c97f2-e174-4780-9933-564225d55068 | 2025-04-13T22:00:23.724969Z | LOGOUT       | user_89   | CUSTOMER    | 41.240.249.225 | INFO       | User logged out successfully | data-service    |
++--------------------------------------+-----------------------------+--------------+-----------+-------------+----------------+------------+------------------------------+-----------------+
+
+================================================================================
+SECURITY EVENTS BATCH 18
+Timestamp: 2025-04-13 18:00:25
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+---------------+-----------+-------------+--------------+------------+--------------------------+-----------------+
+| event_id                             | timestamp                   | event_type    | user_id   | user_type   | ip_address   | severity   | message                  | source_system   |
+|--------------------------------------+-----------------------------+---------------+-----------+-------------+--------------+------------+--------------------------+-----------------|
+| 9770ee7a-a14b-488b-b2ac-ddfd519f133c | 2025-04-13T22:00:24.731296Z | LOGIN_SUCCESS | user_60   | CUSTOMER    | 220.13.4.58  | INFO       | Successful login attempt | data-service    |
++--------------------------------------+-----------------------------+---------------+-----------+-------------+--------------+------------+--------------------------+-----------------+
+
+================================================================================
+SECURITY EVENTS BATCH 19
+Timestamp: 2025-04-13 18:00:26
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+-----------------+-----------+-------------+--------------+------------+-------------------------------------------------------+-----------------+
+| event_id                             | timestamp                   | event_type      | user_id   | user_type   | ip_address   | severity   | message                                               | source_system   |
+|--------------------------------------+-----------------------------+-----------------+-----------+-------------+--------------+------------+-------------------------------------------------------+-----------------|
+| bbd130ed-67e6-49e2-a37c-78be7c9e1813 | 2025-04-13T22:00:25.736553Z | ACCOUNT_LOCKOUT | user_60   | CUSTOMER    | 220.13.4.58  | HIGH       | Account locked due to excessive failed login attempts | user-service    |
++--------------------------------------+-----------------------------+-----------------+-----------+-------------+--------------+------------+-------------------------------------------------------+-----------------+
+
+================================================================================
+SECURITY EVENTS BATCH 20
+Timestamp: 2025-04-13 18:00:27
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+---------------------+-----------+-------------+-----------------+------------+-------------------------------------------------+-----------------+
+| event_id                             | timestamp                   | event_type          | user_id   | user_type   | ip_address      | severity   | message                                         | source_system   |
+|--------------------------------------+-----------------------------+---------------------+-----------+-------------+-----------------+------------+-------------------------------------------------+-----------------|
+| 273203e3-7684-4c4c-b082-81d153ebdc22 | 2025-04-13T22:00:26.740100Z | UNAUTHORIZED_ACCESS | user_17   | CUSTOMER    | 136.216.182.240 | MEDIUM     | Unauthorized access attempt to /internal/config | auth-service    |
++--------------------------------------+-----------------------------+---------------------+-----------+-------------+-----------------+------------+-------------------------------------------------+-----------------+
+
+================================================================================
+SECURITY EVENTS BATCH 21
+Timestamp: 2025-04-13 18:00:28
+Record count: 1
+================================================================================
+2025-04-13 18:00:29,141 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:29,734 - __main__ - INFO - Batch 22: 1 records
+2025-04-13 18:00:30,513 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:30,774 - __main__ - INFO - Batch 23: 1 records
+2025-04-13 18:00:30,926 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:31,462 - __main__ - INFO - Batch 24: 1 records
+2025-04-13 18:00:31,894 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:32,427 - __main__ - INFO - Batch 25: 1 records
+2025-04-13 18:00:32,904 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:33,439 - __main__ - INFO - Batch 26: 1 records
+2025-04-13 18:00:33,901 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:34,433 - __main__ - INFO - Batch 27: 1 records
+2025-04-13 18:00:34,964 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:35,508 - __main__ - INFO - Batch 28: 1 records
++--------------------------------------+-----------------------------+---------------+-----------+-------------+----------------+------------+--------------------------+-----------------+
+| event_id                             | timestamp                   | event_type    | user_id   | user_type   | ip_address     | severity   | message                  | source_system   |
+|--------------------------------------+-----------------------------+---------------+-----------+-------------+----------------+------------+--------------------------+-----------------|
+| b5c6e7ab-535f-4ac0-b456-d9373c0b7672 | 2025-04-13T22:00:27.744116Z | LOGIN_SUCCESS | user_30   | EMPLOYEE    | 10.250.110.153 | INFO       | Successful login attempt | mobile-app      |
++--------------------------------------+-----------------------------+---------------+-----------+-------------+----------------+------------+--------------------------+-----------------+
+
+================================================================================
+SECURITY EVENTS BATCH 22
+Timestamp: 2025-04-13 18:00:29
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+---------------+-----------+-------------+----------------+------------+----------------------------------------+-----------------+
+| event_id                             | timestamp                   | event_type    | user_id   | user_type   | ip_address     | severity   | message                                | source_system   |
+|--------------------------------------+-----------------------------+---------------+-----------+-------------+----------------+------------+----------------------------------------+-----------------|
+| 66bf0bfe-74ba-4360-a883-bbbf6d54869c | 2025-04-13T22:00:28.747747Z | LOGIN_FAILURE | user_32   | CUSTOMER    | 207.22.172.201 | HIGH       | Failed login attempt: invalid_username | api-gateway     |
++--------------------------------------+-----------------------------+---------------+-----------+-------------+----------------+------------+----------------------------------------+-----------------+
+
+================================================================================
+SECURITY EVENTS BATCH 23
+Timestamp: 2025-04-13 18:00:30
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+---------------+-----------+-------------+--------------+------------+--------------------------+-----------------+
+| event_id                             | timestamp                   | event_type    | user_id   | user_type   | ip_address   | severity   | message                  | source_system   |
+|--------------------------------------+-----------------------------+---------------+-----------+-------------+--------------+------------+--------------------------+-----------------|
+| a8f4c858-2081-4502-9a4f-f3f1533571ec | 2025-04-13T22:00:29.751830Z | LOGIN_SUCCESS | user_83   | ADMIN       | 10.14.91.172 | INFO       | Successful login attempt | admin-panel     |
++--------------------------------------+-----------------------------+---------------+-----------+-------------+--------------+------------+--------------------------+-----------------+
+
+================================================================================
+SECURITY EVENTS BATCH 24
+Timestamp: 2025-04-13 18:00:31
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+---------------+-----------+-------------+---------------+------------+--------------------------+-----------------+
+| event_id                             | timestamp                   | event_type    | user_id   | user_type   | ip_address    | severity   | message                  | source_system   |
+|--------------------------------------+-----------------------------+---------------+-----------+-------------+---------------+------------+--------------------------+-----------------|
+| 3753396b-a3db-4f3d-96f9-94e53fd3937c | 2025-04-13T22:00:30.758393Z | LOGIN_SUCCESS | user_82   | CUSTOMER    | 98.81.135.190 | INFO       | Successful login attempt | admin-panel     |
++--------------------------------------+-----------------------------+---------------+-----------+-------------+---------------+------------+--------------------------+-----------------+
+
+================================================================================
+SECURITY EVENTS BATCH 25
+Timestamp: 2025-04-13 18:00:32
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+-----------------+-----------+-------------+-----------------+------------+-------------------------------+-----------------+
+| event_id                             | timestamp                   | event_type      | user_id   | user_type   | ip_address      | severity   | message                       | source_system   |
+|--------------------------------------+-----------------------------+-----------------+-----------+-------------+-----------------+------------+-------------------------------+-----------------|
+| 1d13c1b8-83d5-4c14-9fc3-1e18299dd539 | 2025-04-13T22:00:31.764871Z | PASSWORD_CHANGE | user_17   | CUSTOMER    | 136.216.182.240 | MEDIUM     | Password successfully changed | auth-service    |
++--------------------------------------+-----------------------------+-----------------+-----------+-------------+-----------------+------------+-------------------------------+-----------------+
+
+================================================================================
+SECURITY EVENTS BATCH 26
+Timestamp: 2025-04-13 18:00:33
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+--------------+-----------+-------------+----------------+------------+------------------------------+-------------------+
+| event_id                             | timestamp                   | event_type   | user_id   | user_type   | ip_address     | severity   | message                      | source_system     |
+|--------------------------------------+-----------------------------+--------------+-----------+-------------+----------------+------------+------------------------------+-------------------|
+| 7b447d96-e462-4323-acb2-5e2c0a1952f0 | 2025-04-13T22:00:32.769629Z | LOGOUT       | user_39   | CUSTOMER    | 10.250.110.153 | INFO       | User logged out successfully | reporting-service |
++--------------------------------------+-----------------------------+--------------+-----------+-------------+----------------+------------+------------------------------+-------------------+
+
+================================================================================
+SECURITY EVENTS BATCH 27
+Timestamp: 2025-04-13 18:00:34
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+---------------+-----------+-------------+---------------+------------+-----------------------------------+-----------------+
+| event_id                             | timestamp                   | event_type    | user_id   | user_type   | ip_address    | severity   | message                           | source_system   |
+|--------------------------------------+-----------------------------+---------------+-----------+-------------+---------------+------------+-----------------------------------+-----------------|
+| 26315f17-c593-46c0-8a6d-1bb4e619dddc | 2025-04-13T22:00:33.771237Z | LOGIN_FAILURE | user_82   | CUSTOMER    | 98.81.135.190 | MEDIUM     | Failed login attempt: invalid_2fa | admin-panel     |
++--------------------------------------+-----------------------------+---------------+-----------+-------------+---------------+------------+-----------------------------------+-----------------+
+2025-04-13 18:00:35,942 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:36,480 - __main__ - INFO - Batch 29: 1 records
+2025-04-13 18:00:37,071 - py4j.clientserver - INFO - Received command c on object id p0
+[Stage 60:>                                                         (0 + 1) / 1]                                                                                2025-04-13 18:00:37,642 - __main__ - INFO - Batch 30: 1 records
+2025-04-13 18:00:38,057 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:38,629 - __main__ - INFO - Batch 31: 1 records
+2025-04-13 18:00:38,923 - py4j.clientserver - INFO - Received command c on object id p0
+[Stage 64:>                                                         (0 + 1) / 1]                                                                                2025-04-13 18:00:39,455 - __main__ - INFO - Batch 32: 1 records
+2025-04-13 18:00:39,918 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:40,453 - __main__ - INFO - Batch 33: 1 records
+2025-04-13 18:00:40,984 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:41,531 - __main__ - INFO - Batch 34: 1 records
+
+================================================================================
+SECURITY EVENTS BATCH 28
+Timestamp: 2025-04-13 18:00:35
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+---------------+-----------+-------------+---------------+------------+--------------------------+-------------------+
+| event_id                             | timestamp                   | event_type    | user_id   | user_type   | ip_address    | severity   | message                  | source_system     |
+|--------------------------------------+-----------------------------+---------------+-----------+-------------+---------------+------------+--------------------------+-------------------|
+| e426e450-c199-48e5-94bf-c22279809b08 | 2025-04-13T22:00:34.774238Z | LOGIN_SUCCESS | user_82   | CUSTOMER    | 60.185.140.91 | INFO       | Successful login attempt | reporting-service |
++--------------------------------------+-----------------------------+---------------+-----------+-------------+---------------+------------+--------------------------+-------------------+
+
+================================================================================
+SECURITY EVENTS BATCH 29
+Timestamp: 2025-04-13 18:00:36
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+---------------+-----------+-------------+-----------------+------------+-----------------------------------+----------------------+
+| event_id                             | timestamp                   | event_type    | user_id   | user_type   | ip_address      | severity   | message                           | source_system        |
+|--------------------------------------+-----------------------------+---------------+-----------+-------------+-----------------+------------+-----------------------------------+----------------------|
+| f5af5918-51e3-4063-bda1-8c297e2a0aea | 2025-04-13T22:00:35.776758Z | LOGIN_FAILURE | user_56   | EMPLOYEE    | 200.112.177.232 | MEDIUM     | Failed login attempt: invalid_2fa | notification-service |
++--------------------------------------+-----------------------------+---------------+-----------+-------------+-----------------+------------+-----------------------------------+----------------------+
+
+================================================================================
+SECURITY EVENTS BATCH 30
+Timestamp: 2025-04-13 18:00:37
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+---------------+-----------+-------------+----------------+------------+----------------------------------------+-----------------+
+| event_id                             | timestamp                   | event_type    | user_id   | user_type   | ip_address     | severity   | message                                | source_system   |
+|--------------------------------------+-----------------------------+---------------+-----------+-------------+----------------+------------+----------------------------------------+-----------------|
+| 54c7a0aa-8335-4850-8638-115c2c2b467f | 2025-04-13T22:00:36.779472Z | LOGIN_FAILURE | user_16   | CUSTOMER    | 104.140.98.106 | MEDIUM     | Failed login attempt: account_disabled | api-gateway     |
++--------------------------------------+-----------------------------+---------------+-----------+-------------+----------------+------------+----------------------------------------+-----------------+
+
+================================================================================
+SECURITY EVENTS BATCH 31
+Timestamp: 2025-04-13 18:00:38
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+----------------------+-----------+-------------+-----------------+------------+-----------------------------------------+-----------------+
+| event_id                             | timestamp                   | event_type           | user_id   | user_type   | ip_address      | severity   | message                                 | source_system   |
+|--------------------------------------+-----------------------------+----------------------+-----------+-------------+-----------------+------------+-----------------------------------------+-----------------|
+| 925ca746-92cb-4568-8acf-53229fa01a1f | 2025-04-13T22:00:37.780959Z | PRIVILEGE_ESCALATION | user_56   | EMPLOYEE    | 200.112.177.232 | HIGH       | Attempted privilege escalation detected | user-service    |
++--------------------------------------+-----------------------------+----------------------+-----------+-------------+-----------------+------------+-----------------------------------------+-----------------+
+
+================================================================================
+SECURITY EVENTS BATCH 32
+Timestamp: 2025-04-13 18:00:39
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+--------------+-----------+-------------+-----------------+------------+------------------------------+-------------------+
+| event_id                             | timestamp                   | event_type   | user_id   | user_type   | ip_address      | severity   | message                      | source_system     |
+|--------------------------------------+-----------------------------+--------------+-----------+-------------+-----------------+------------+------------------------------+-------------------|
+| d3747753-3e92-4ffd-956e-99b5eec2468f | 2025-04-13T22:00:38.785809Z | LOGOUT       | user_2    | EMPLOYEE    | 200.112.177.232 | INFO       | User logged out successfully | reporting-service |
++--------------------------------------+-----------------------------+--------------+-----------+-------------+-----------------+------------+------------------------------+-------------------+
+
+================================================================================
+SECURITY EVENTS BATCH 33
+Timestamp: 2025-04-13 18:00:40
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+---------------+-----------+-------------+---------------+------------+------------------------------------------------+----------------------+
+| event_id                             | timestamp                   | event_type    | user_id   | user_type   | ip_address    | severity   | message                                        | source_system        |
+|--------------------------------------+-----------------------------+---------------+-----------+-------------+---------------+------------+------------------------------------------------+----------------------|
+| d8a99f57-be0d-4cb1-9ecf-748121be5a35 | 2025-04-13T22:00:39.789758Z | CONFIG_CHANGE | user_82   | CUSTOMER    | 98.81.135.190 | MEDIUM     | Configuration changed: authentication settings | notification-service |
++--------------------------------------+-----------------------------+---------------+-----------+-------------+---------------+------------+------------------------------------------------+----------------------+
+
+================================================================================
+SECURITY EVENTS BATCH 34
+Timestamp: 2025-04-13 18:00:41
+Record count: 1
+================================================================================
+2025-04-13 18:00:41,940 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:42,479 - __main__ - INFO - Batch 35: 1 records
+2025-04-13 18:00:42,925 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:43,454 - __main__ - INFO - Batch 36: 1 records
+2025-04-13 18:00:43,956 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:44,484 - __main__ - INFO - Batch 37: 1 records
+2025-04-13 18:00:44,950 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:45,480 - __main__ - INFO - Batch 38: 1 records
+2025-04-13 18:00:46,058 - py4j.clientserver - INFO - Received command c on object id p0
+[Stage 78:>                                                         (0 + 1) / 1]                                                                                2025-04-13 18:00:46,610 - __main__ - INFO - Batch 39: 1 records
+2025-04-13 18:00:46,950 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:47,481 - __main__ - INFO - Batch 40: 1 records
++--------------------------------------+-----------------------------+-------------------+-----------+-------------+-----------------+------------+--------------------------------------------+-------------------+
+| event_id                             | timestamp                   | event_type        | user_id   | user_type   | ip_address      | severity   | message                                    | source_system     |
+|--------------------------------------+-----------------------------+-------------------+-----------+-------------+-----------------+------------+--------------------------------------------+-------------------|
+| e4d84ad1-b8c5-4ef9-beef-7256f33e1823 | 2025-04-13T22:00:40.792633Z | DATA_MODIFICATION | user_17   | CUSTOMER    | 136.216.182.240 | MEDIUM     | Data modification: content records updated | reporting-service |
++--------------------------------------+-----------------------------+-------------------+-----------+-------------+-----------------+------------+--------------------------------------------+-------------------+
+
+================================================================================
+SECURITY EVENTS BATCH 35
+Timestamp: 2025-04-13 18:00:42
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+---------------+-----------+-------------+----------------+------------+--------------------------+----------------------+
+| event_id                             | timestamp                   | event_type    | user_id   | user_type   | ip_address     | severity   | message                  | source_system        |
+|--------------------------------------+-----------------------------+---------------+-----------+-------------+----------------+------------+--------------------------+----------------------|
+| fa46c6c5-bf9c-4ac2-9db0-24c305ab34e7 | 2025-04-13T22:00:41.798082Z | LOGIN_SUCCESS | user_41   | EMPLOYEE    | 10.194.126.247 | INFO       | Successful login attempt | notification-service |
++--------------------------------------+-----------------------------+---------------+-----------+-------------+----------------+------------+--------------------------+----------------------+
+
+================================================================================
+SECURITY EVENTS BATCH 36
+Timestamp: 2025-04-13 18:00:43
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+---------------+-----------+-------------+---------------+------------+-------------------------+-----------------+
+| event_id                             | timestamp                   | event_type    | user_id   | user_type   | ip_address    | severity   | message                 | source_system   |
+|--------------------------------------+-----------------------------+---------------+-----------+-------------+---------------+------------+-------------------------+-----------------|
+| 66e4b074-02ba-4f7d-bee8-b32d5ce0c188 | 2025-04-13T22:00:42.803494Z | MFA_CHALLENGE | user_57   | EMPLOYEE    | 172.20.196.85 | LOW        | MFA challenge completed | billing-service |
++--------------------------------------+-----------------------------+---------------+-----------+-------------+---------------+------------+-------------------------+-----------------+
+
+================================================================================
+SECURITY EVENTS BATCH 37
+Timestamp: 2025-04-13 18:00:44
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+---------------+-----------+-------------+----------------+------------+--------------------------+-----------------+
+| event_id                             | timestamp                   | event_type    | user_id   | user_type   | ip_address     | severity   | message                  | source_system   |
+|--------------------------------------+-----------------------------+---------------+-----------+-------------+----------------+------------+--------------------------+-----------------|
+| 9525e9a1-f51a-4ffb-912d-ae72944f3c99 | 2025-04-13T22:00:43.807025Z | LOGIN_SUCCESS | user_9    | EMPLOYEE    | 220.118.232.32 | INFO       | Successful login attempt | user-service    |
++--------------------------------------+-----------------------------+---------------+-----------+-------------+----------------+------------+--------------------------+-----------------+
+
+================================================================================
+SECURITY EVENTS BATCH 38
+Timestamp: 2025-04-13 18:00:45
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+---------------------+-----------+-------------+---------------+------------+--------------------------------------------------------+-----------------+
+| event_id                             | timestamp                   | event_type          | user_id   | user_type   | ip_address    | severity   | message                                                | source_system   |
+|--------------------------------------+-----------------------------+---------------------+-----------+-------------+---------------+------------+--------------------------------------------------------+-----------------|
+| a6caa54d-b54e-46f7-b641-a3cf09d88759 | 2025-04-13T22:00:44.808565Z | UNAUTHORIZED_ACCESS | user_37   | ANONYMOUS   | 195.185.146.1 | HIGH       | Unauthorized access attempt to /api/v2/user-management | user-service    |
++--------------------------------------+-----------------------------+---------------------+-----------+-------------+---------------+------------+--------------------------------------------------------+-----------------+
+
+================================================================================
+SECURITY EVENTS BATCH 39
+Timestamp: 2025-04-13 18:00:46
+Record count: 1
+================================================================================
++--------------------------------------+-----------------------------+--------------+-----------+-------------+----------------+------------+------------------------------+-----------------+
+| event_id                             | timestamp                   | event_type   | user_id   | user_type   | ip_address     | severity   | message                      | source_system   |
+|--------------------------------------+-----------------------------+--------------+-----------+-------------+----------------+------------+------------------------------+-----------------|
+| 87ae8ac0-865a-40a9-8f1a-6825b5a32ed2 | 2025-04-13T22:00:45.810306Z | LOGOUT       | user_33   | EMPLOYEE    | 220.118.232.32 | INFO       | User logged out successfully | api-gateway     |
++--------------------------------------+-----------------------------+--------------+-----------+-------------+----------------+------------+------------------------------+-----------------+
+
+================================================================================
+SECURITY EVENTS BATCH 40
+Timestamp: 2025-04-13 18:00:47
+Record count: 1
+================================================================================
+2025-04-13 18:00:47,996 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:48,542 - __main__ - INFO - Batch 41: 1 records
+2025-04-13 18:00:48,597 - py4j.clientserver - INFO - Error while receiving.
+Traceback (most recent call last):
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+RuntimeError: reentrant call inside <_io.BufferedReader name=5>
+2025-04-13 18:00:48,598 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-04-13 18:00:48,598 - root - ERROR - Exception while sending command.
+Traceback (most recent call last):
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+RuntimeError: reentrant call inside <_io.BufferedReader name=5>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/clientserver.py", line 539, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+2025-04-13 18:00:48,602 - py4j.clientserver - INFO - Error while receiving.
+Traceback (most recent call last):
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socket.py", line 704, in readinto
+    return self._sock.recv_into(b)
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/pyspark/context.py", line 377, in signal_handler
+    self.cancelAllJobs()
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/pyspark/context.py", line 2255, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/pyspark/errors/exceptions/captured.py", line 169, in deco
+    return f(*a, **kw)
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/protocol.py", line 334, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o25.sc
+2025-04-13 18:00:48,609 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-04-13 18:00:48,610 - root - ERROR - Exception while sending command.
+Traceback (most recent call last):
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socket.py", line 704, in readinto
+    return self._sock.recv_into(b)
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/pyspark/context.py", line 377, in signal_handler
+    self.cancelAllJobs()
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/pyspark/context.py", line 2255, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/pyspark/errors/exceptions/captured.py", line 169, in deco
+    return f(*a, **kw)
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/protocol.py", line 334, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o25.sc
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/clientserver.py", line 539, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+2025-04-13 18:00:48,610 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-04-13 18:00:48,611 - __main__ - ERROR - Error in streaming query: An error occurred while calling o62.awaitTermination
+Traceback (most recent call last):
+  File "/Users/williambrumley/Documents/Code/kafka-spark/direct_kafka_spark.py", line 143, in process_kafka_events
+    query.awaitTermination()
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/pyspark/sql/streaming/query.py", line 201, in awaitTermination
+    return self._jsq.awaitTermination()
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/pyspark/errors/exceptions/captured.py", line 169, in deco
+    return f(*a, **kw)
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/protocol.py", line 334, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o62.awaitTermination
+2025-04-13 18:00:48,613 - __main__ - INFO - Stopping Spark session
+25/04/13 18:00:48 ERROR MicroBatchExecution: Query [id = 91d0d06f-7110-4cee-9fed-1f3ac25c3081, runId = 9718a59b-8cb6-4bc4-9afe-a132836502e0] terminated with error
+py4j.Py4JException: Error while sending a command.
+	at py4j.CallbackClient.sendCommand(CallbackClient.java:397)
+	at py4j.CallbackClient.sendCommand(CallbackClient.java:356)
+	at py4j.reflection.PythonProxyHandler.invoke(PythonProxyHandler.java:106)
+	at jdk.proxy3/jdk.proxy3.$Proxy36.call(Unknown Source)
+	at org.apache.spark.sql.execution.streaming.sources.PythonForeachBatchHelper$.$anonfun$callForeachBatch$1(ForeachBatchSink.scala:53)
+	at org.apache.spark.sql.execution.streaming.sources.PythonForeachBatchHelper$.$anonfun$callForeachBatch$1$adapted(ForeachBatchSink.scala:53)
+	at org.apache.spark.sql.execution.streaming.sources.ForeachBatchSink.addBatch(ForeachBatchSink.scala:34)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runBatch$17(MicroBatchExecution.scala:729)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:118)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:195)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:103)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:827)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:65)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runBatch$16(MicroBatchExecution.scala:726)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:411)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:409)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.runBatch(MicroBatchExecution.scala:726)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$2(MicroBatchExecution.scala:284)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:411)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:409)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$1(MicroBatchExecution.scala:247)
+	at org.apache.spark.sql.execution.streaming.ProcessingTimeExecutor.execute(TriggerExecutor.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.runActivatedStream(MicroBatchExecution.scala:237)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.$anonfun$runStream$1(StreamExecution.scala:306)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:827)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.org$apache$spark$sql$execution$streaming$StreamExecution$$runStream(StreamExecution.scala:284)
+	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.run(StreamExecution.scala:207)
+Caused by: py4j.Py4JNetworkException: Error while sending a command: c
+p0
+call
+ro391
+L41
+e
+
+	at py4j.ClientServerConnection.sendCommand(ClientServerConnection.java:253)
+	at py4j.CallbackClient.sendCommand(CallbackClient.java:384)
+	... 30 more
+Caused by: py4j.Py4JException: Received empty command
+	at py4j.ClientServerConnection.sendCommand(ClientServerConnection.java:236)
+	... 31 more
+25/04/13 18:00:48 WARN NettyRpcEnv: Ignored failure: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@28bc0697[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@52fb38e0[Wrapped task = org.apache.spark.rpc.netty.NettyRpcEnv$$anon$1@31061487]] rejected from java.util.concurrent.ScheduledThreadPoolExecutor@3d78a88c[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0]
+Exception in thread "stream execution thread for [id = 91d0d06f-7110-4cee-9fed-1f3ac25c3081, runId = 9718a59b-8cb6-4bc4-9afe-a132836502e0]" org.apache.spark.SparkException: Exception thrown in awaitResult: 
+	at org.apache.spark.util.ThreadUtils$.awaitResult(ThreadUtils.scala:322)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	at org.apache.spark.rpc.RpcEndpointRef.askSync(RpcEndpointRef.scala:101)
+	at org.apache.spark.rpc.RpcEndpointRef.askSync(RpcEndpointRef.scala:85)
+	at org.apache.spark.sql.execution.streaming.state.StateStoreCoordinatorRef.deactivateInstances(StateStoreCoordinator.scala:119)
+	at org.apache.spark.sql.streaming.StreamingQueryManager.notifyQueryTermination(StreamingQueryManager.scala:426)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.$anonfun$runStream$3(StreamExecution.scala:361)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.util.UninterruptibleThread.runUninterruptibly(UninterruptibleThread.scala:77)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.org$apache$spark$sql$execution$streaming$StreamExecution$$runStream(StreamExecution.scala:341)
+	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.run(StreamExecution.scala:207)
+Caused by: org.apache.spark.rpc.RpcEnvStoppedException: RpcEnv already stopped.
+	at org.apache.spark.rpc.netty.Dispatcher.postMessage(Dispatcher.scala:176)
+	at org.apache.spark.rpc.netty.Dispatcher.postLocalMessage(Dispatcher.scala:144)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.askAbortable(NettyRpcEnv.scala:242)
+	at org.apache.spark.rpc.netty.NettyRpcEndpointRef.askAbortable(NettyRpcEnv.scala:554)
+	at org.apache.spark.rpc.netty.NettyRpcEndpointRef.ask(NettyRpcEnv.scala:558)
+	at org.apache.spark.rpc.RpcEndpointRef.askSync(RpcEndpointRef.scala:100)
+	... 8 more

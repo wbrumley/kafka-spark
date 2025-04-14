@@ -1,0 +1,54 @@
+FROM bitnami/spark:3.4.1
+
+USER root
+
+# Install Python dependencies
+RUN pip install confluent-kafka pyspark pandas numpy matplotlib termcolor tabulate
+
+# Create directories
+RUN mkdir -p /opt/spark/apps /opt/spark/data /opt/spark/logs
+
+# Copy application code
+COPY spark-apps/security_events_processor.py /opt/spark/apps/
+COPY spark-data/ /opt/spark/data/
+
+# Set environment variables
+ENV SPARK_MASTER="spark://spark-master:7077"
+ENV KAFKA_BOOTSTRAP_SERVERS="kafka:29092"
+ENV KAFKA_TOPIC="security-events"
+
+# Set working directory
+WORKDIR /opt/spark/apps
+
+# Create submit script directly in the container
+RUN echo '#!/bin/bash\n\
+\n\
+# Submit script for running the security events processor\n\
+\n\
+echo "Starting Spark Submit for Security Events Processor"\n\
+echo "SPARK_MASTER: $SPARK_MASTER"\n\
+echo "KAFKA_BOOTSTRAP_SERVERS: $KAFKA_BOOTSTRAP_SERVERS"\n\
+echo "KAFKA_TOPIC: $KAFKA_TOPIC"\n\
+\n\
+# Ensure checkpoint directory exists\n\
+mkdir -p /opt/spark/data/checkpoints\n\
+\n\
+# Submit the Spark job\n\
+/opt/bitnami/spark/bin/spark-submit \\\n\
+  --master ${SPARK_MASTER} \\\n\
+  --name "SecurityEventsProcessor" \\\n\
+  --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.4.1 \\\n\
+  --conf spark.sql.adaptive.enabled=true \\\n\
+  --conf spark.sql.shuffle.partitions=2 \\\n\
+  --conf spark.driver.memory=1g \\\n\
+  --conf spark.executor.memory=1g \\\n\
+  /opt/spark/apps/security_events_processor.py\n\
+\n\
+# If the application exits, keep the container running to inspect logs\n\
+echo "Spark job exited, container will sleep for debugging purposes"\n\
+tail -f /dev/null' > /opt/spark/apps/submit.sh
+
+# Make script executable
+RUN chmod +x /opt/spark/apps/submit.sh
+
+# Run the submit script

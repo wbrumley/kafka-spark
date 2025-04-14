@@ -1,0 +1,15 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Your rule content
+
+- You can @ files here
+- You can use markdown but dont have to
+
+Keep all Kafka-related configurations in a separate config file
+Use environment variables for sensitive/deployment-specific values
+Maintain clear separation between generator logic and Kafka producer logic
+Follow a modular structure for easy testing and deployment

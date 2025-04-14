@@ -1,0 +1,264 @@
+2025-04-13 17:41:21,773 - __main__ - INFO - Successfully imported dependencies
+2025-04-13 17:41:21,773 - __main__ - INFO - Creating Spark session
+2025-04-13 17:41:26,826 - __main__ - INFO - Kafka Bootstrap Servers: localhost:9092
+2025-04-13 17:41:26,827 - __main__ - INFO - Kafka Topic: dev_security_logs
+2025-04-13 17:41:29,119 - __main__ - INFO - DataFrame schema:
+2025-04-13 17:41:29,408 - py4j.java_gateway - INFO - Callback Server Starting
+2025-04-13 17:41:29,408 - py4j.java_gateway - INFO - Socket listening on ('127.0.0.1', 58409)
+2025-04-13 17:41:29,684 - __main__ - INFO - Streaming query started. Press Ctrl+C to stop.
+2025-04-13 17:41:31,465 - py4j.clientserver - INFO - Python Server ready to receive messages
+2025-04-13 17:41:31,465 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 17:41:32,454 - __main__ - INFO - Batch 0: 0 records
+2025-04-13 17:42:03,526 - py4j.clientserver - INFO - Error while receiving.
+Traceback (most recent call last):
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+RuntimeError: reentrant call inside <_io.BufferedReader name=5>
+2025-04-13 17:42:03,530 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-04-13 17:42:03,530 - root - ERROR - Exception while sending command.
+Traceback (most recent call last):
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+RuntimeError: reentrant call inside <_io.BufferedReader name=5>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/clientserver.py", line 539, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+2025-04-13 17:42:03,533 - py4j.clientserver - INFO - Error while receiving.
+Traceback (most recent call last):
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socket.py", line 704, in readinto
+    return self._sock.recv_into(b)
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/pyspark/context.py", line 377, in signal_handler
+    self.cancelAllJobs()
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/pyspark/context.py", line 2255, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/pyspark/errors/exceptions/captured.py", line 169, in deco
+    return f(*a, **kw)
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/protocol.py", line 334, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o25.sc
+2025-04-13 17:42:03,540 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-04-13 17:42:03,540 - root - ERROR - Exception while sending command.
+Traceback (most recent call last):
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socket.py", line 704, in readinto
+    return self._sock.recv_into(b)
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/pyspark/context.py", line 377, in signal_handler
+    self.cancelAllJobs()
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/pyspark/context.py", line 2255, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/pyspark/errors/exceptions/captured.py", line 169, in deco
+    return f(*a, **kw)
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/protocol.py", line 334, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o25.sc
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/clientserver.py", line 539, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+2025-04-13 17:42:03,540 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-04-13 17:42:03,540 - __main__ - ERROR - Error in streaming query: An error occurred while calling o62.awaitTermination
+Traceback (most recent call last):
+  File "/Users/williambrumley/Documents/Code/kafka-spark/direct_kafka_spark.py", line 134, in process_kafka_events
+    query.awaitTermination()
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/pyspark/sql/streaming/query.py", line 201, in awaitTermination
+    return self._jsq.awaitTermination()
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/pyspark/errors/exceptions/captured.py", line 169, in deco
+    return f(*a, **kw)
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/protocol.py", line 334, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o62.awaitTermination
+2025-04-13 17:42:03,544 - __main__ - INFO - Stopping Spark session
+2025-04-13 17:42:03,763 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-04-13 17:59:54,441 - __main__ - INFO - Successfully imported dependencies
+2025-04-13 17:59:54,442 - __main__ - INFO - Creating Spark session
+2025-04-13 17:59:59,548 - __main__ - INFO - Kafka Bootstrap Servers: localhost:9092
+2025-04-13 17:59:59,548 - __main__ - INFO - Kafka Topic: dev_security_logs
+2025-04-13 17:59:59,549 - __main__ - INFO - Starting offsets: earliest
+2025-04-13 18:00:03,124 - __main__ - INFO - DataFrame schema:
+2025-04-13 18:00:03,465 - py4j.java_gateway - INFO - Callback Server Starting
+2025-04-13 18:00:03,465 - py4j.java_gateway - INFO - Socket listening on ('127.0.0.1', 58738)
+2025-04-13 18:00:03,832 - __main__ - INFO - Streaming query started. Press Ctrl+C to stop.
+2025-04-13 18:00:05,507 - py4j.clientserver - INFO - Python Server ready to receive messages
+2025-04-13 18:00:05,508 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:06,837 - __main__ - INFO - Batch 0: 12 records
+2025-04-13 18:00:07,950 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:08,549 - __main__ - INFO - Batch 1: 4 records
+2025-04-13 18:00:08,929 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:09,494 - __main__ - INFO - Batch 2: 1 records
+2025-04-13 18:00:09,869 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:10,441 - __main__ - INFO - Batch 3: 1 records
+2025-04-13 18:00:10,838 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:11,394 - __main__ - INFO - Batch 4: 1 records
+2025-04-13 18:00:11,845 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:12,411 - __main__ - INFO - Batch 5: 1 records
+2025-04-13 18:00:12,852 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:13,411 - __main__ - INFO - Batch 6: 1 records
+2025-04-13 18:00:13,953 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:14,524 - __main__ - INFO - Batch 7: 1 records
+2025-04-13 18:00:14,857 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:15,407 - __main__ - INFO - Batch 8: 1 records
+2025-04-13 18:00:15,841 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:16,389 - __main__ - INFO - Batch 9: 1 records
+2025-04-13 18:00:16,836 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:17,382 - __main__ - INFO - Batch 10: 1 records
+2025-04-13 18:00:17,836 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:18,381 - __main__ - INFO - Batch 11: 1 records
+2025-04-13 18:00:18,871 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:19,419 - __main__ - INFO - Batch 12: 1 records
+2025-04-13 18:00:19,859 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:20,401 - __main__ - INFO - Batch 13: 1 records
+2025-04-13 18:00:20,845 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:21,386 - __main__ - INFO - Batch 14: 1 records
+2025-04-13 18:00:21,863 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:22,410 - __main__ - INFO - Batch 15: 1 records
+2025-04-13 18:00:23,161 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:23,718 - __main__ - INFO - Batch 16: 1 records
+2025-04-13 18:00:24,460 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:24,747 - __main__ - INFO - Batch 17: 1 records
+2025-04-13 18:00:24,899 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:25,446 - __main__ - INFO - Batch 18: 1 records
+2025-04-13 18:00:25,914 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:26,468 - __main__ - INFO - Batch 19: 1 records
+2025-04-13 18:00:26,880 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:27,418 - __main__ - INFO - Batch 20: 1 records
+2025-04-13 18:00:27,890 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:28,429 - __main__ - INFO - Batch 21: 1 records
+2025-04-13 18:00:29,141 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:29,734 - __main__ - INFO - Batch 22: 1 records
+2025-04-13 18:00:30,513 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:30,774 - __main__ - INFO - Batch 23: 1 records
+2025-04-13 18:00:30,926 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:31,462 - __main__ - INFO - Batch 24: 1 records
+2025-04-13 18:00:31,894 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:32,427 - __main__ - INFO - Batch 25: 1 records
+2025-04-13 18:00:32,904 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:33,439 - __main__ - INFO - Batch 26: 1 records
+2025-04-13 18:00:33,901 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:34,433 - __main__ - INFO - Batch 27: 1 records
+2025-04-13 18:00:34,964 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:35,508 - __main__ - INFO - Batch 28: 1 records
+2025-04-13 18:00:35,942 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:36,480 - __main__ - INFO - Batch 29: 1 records
+2025-04-13 18:00:37,071 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:37,642 - __main__ - INFO - Batch 30: 1 records
+2025-04-13 18:00:38,057 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:38,629 - __main__ - INFO - Batch 31: 1 records
+2025-04-13 18:00:38,923 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:39,455 - __main__ - INFO - Batch 32: 1 records
+2025-04-13 18:00:39,918 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:40,453 - __main__ - INFO - Batch 33: 1 records
+2025-04-13 18:00:40,984 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:41,531 - __main__ - INFO - Batch 34: 1 records
+2025-04-13 18:00:41,940 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:42,479 - __main__ - INFO - Batch 35: 1 records
+2025-04-13 18:00:42,925 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:43,454 - __main__ - INFO - Batch 36: 1 records
+2025-04-13 18:00:43,956 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:44,484 - __main__ - INFO - Batch 37: 1 records
+2025-04-13 18:00:44,950 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:45,480 - __main__ - INFO - Batch 38: 1 records
+2025-04-13 18:00:46,058 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:46,610 - __main__ - INFO - Batch 39: 1 records
+2025-04-13 18:00:46,950 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:47,481 - __main__ - INFO - Batch 40: 1 records
+2025-04-13 18:00:47,996 - py4j.clientserver - INFO - Received command c on object id p0
+2025-04-13 18:00:48,542 - __main__ - INFO - Batch 41: 1 records
+2025-04-13 18:00:48,597 - py4j.clientserver - INFO - Error while receiving.
+Traceback (most recent call last):
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+RuntimeError: reentrant call inside <_io.BufferedReader name=5>
+2025-04-13 18:00:48,598 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-04-13 18:00:48,598 - root - ERROR - Exception while sending command.
+Traceback (most recent call last):
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+RuntimeError: reentrant call inside <_io.BufferedReader name=5>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/clientserver.py", line 539, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+2025-04-13 18:00:48,602 - py4j.clientserver - INFO - Error while receiving.
+Traceback (most recent call last):
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socket.py", line 704, in readinto
+    return self._sock.recv_into(b)
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/pyspark/context.py", line 377, in signal_handler
+    self.cancelAllJobs()
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/pyspark/context.py", line 2255, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/pyspark/errors/exceptions/captured.py", line 169, in deco
+    return f(*a, **kw)
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/protocol.py", line 334, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o25.sc
+2025-04-13 18:00:48,609 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-04-13 18:00:48,610 - root - ERROR - Exception while sending command.
+Traceback (most recent call last):
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socket.py", line 704, in readinto
+    return self._sock.recv_into(b)
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/pyspark/context.py", line 377, in signal_handler
+    self.cancelAllJobs()
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/pyspark/context.py", line 2255, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/pyspark/errors/exceptions/captured.py", line 169, in deco
+    return f(*a, **kw)
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/protocol.py", line 334, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o25.sc
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/clientserver.py", line 539, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+2025-04-13 18:00:48,610 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-04-13 18:00:48,611 - __main__ - ERROR - Error in streaming query: An error occurred while calling o62.awaitTermination
+Traceback (most recent call last):
+  File "/Users/williambrumley/Documents/Code/kafka-spark/direct_kafka_spark.py", line 143, in process_kafka_events
+    query.awaitTermination()
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/pyspark/sql/streaming/query.py", line 201, in awaitTermination
+    return self._jsq.awaitTermination()
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/pyspark/errors/exceptions/captured.py", line 169, in deco
+    return f(*a, **kw)
+  File "/Users/williambrumley/Documents/Code/kafka-spark/venv/lib/python3.9/site-packages/py4j/protocol.py", line 334, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o62.awaitTermination
+2025-04-13 18:00:48,613 - __main__ - INFO - Stopping Spark session

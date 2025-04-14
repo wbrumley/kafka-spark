@@ -1,0 +1,16 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Your rule content
+
+- You can @ files here
+- You can use markdown but dont have to
+
+Include basic unit tests for generator logic
+Implement integration tests for Kafka connectivity
+Add health check endpoints
+Include performance testing scripts
+Test with different event generation rates

@@ -1,0 +1,16 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Your rule content
+
+- You can @ files here
+- You can use markdown but dont have to
+
+Generate realistic but clearly synthetic data
+Include timestamp, event_type, user_id, ip_address in all events
+Maintain consistent data formats across all event types
+Use UTC for all timestamps
+Include correlation IDs for related events

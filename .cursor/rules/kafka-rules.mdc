@@ -1,0 +1,16 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Your rule content
+
+- You can @ files here
+- You can use markdown but dont have to
+
+Use topic naming convention: env_service_datatype (e.g., prod_security_logs)
+Implement at-least-once delivery semantics
+Use JSON serialization for messages
+Include message schema version in kafka messages
+Set appropriate retention policies

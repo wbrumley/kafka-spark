@@ -1,0 +1,16 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Your rule content
+
+- You can @ files here
+- You can use markdown but dont have to
+
+Implement graceful shutdown
+Handle Kafka connection failures
+Include retry mechanisms for failed operations
+Log all errors with appropriate context
+Implement backoff strategies for retries
